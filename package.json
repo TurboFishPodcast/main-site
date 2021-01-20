@@ -9,9 +9,12 @@
     "start": "node __sapper__/build"
   },
   "dependencies": {
+    "@rollup/plugin-json": "^4.1.0",
+    "commonmark": "^0.29.3",
     "compression": "^1.7.1",
     "polka": "next",
-    "sirv": "^1.0.0"
+    "sirv": "^1.0.0",
+    "svelte-intersection-observer": "^0.4.0"
   },
   "devDependencies": {
     "sapper": "^0.28.0",
