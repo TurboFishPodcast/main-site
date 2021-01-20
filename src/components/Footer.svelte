@@ -35,12 +35,12 @@
 
 <footer class="footer" id="footer">
 	<div>
-		<a href=""><img src="/social/anchor.png" alt=""></a>
-		<a href=""><img src="/social/discord.png" alt=""></a>
-		<a href=""><img src="/social/email.png" alt=""></a>
-		<a href=""><img src="/social/github.png" alt="" style="background-color: white"></a>
-		<a href=""><img src="/social/twitch.png" alt=""></a>
-		<a href=""><img src="/social/twitter.png" alt=""></a>
+		<a href="https://anchor.fm/responsive"><img src="/social/anchor.png" alt=""></a>
+		<a href="https://discord.gg/semsxbP"><img src="/social/discord.png" alt=""></a>
+		<a href="mailto:responsivedev@pm.me"><img src="/social/email.png" alt=""></a>
+		<a href="https://github.com/ResponsiveDev"><img src="/social/github.png" alt="" style="background-color: white"></a>
+		<a href="https://twitch.tv/vandesm14"><img src="/social/twitch.png" alt=""></a>
+		<a href="https://twitter.com/RespDev"><img src="/social/twitter.png" alt=""></a>
 	</div>
 	<p>© Copyright {@html new Date().getFullYear()} Responsive</p>
 </footer>

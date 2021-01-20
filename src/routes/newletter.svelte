@@ -1,12 +1,12 @@
 <script>
-  import Navbar from "./_components/Navbar.svelte";
-  import Footer from "./_components/Footer.svelte";
-  import Header from "./_components/Header.svelte";
-	import Article from "./_components/Article.svelte";
-	import Button from "./_components/Button.svelte";
+  import Navbar from '../components/Navbar.svelte';
+  import Footer from '../components/Footer.svelte';
+  import Header from '../components/Header.svelte';
+	import Article from '../components/Article.svelte';
+	import Button from '../components/Button.svelte';
 	
-	import commonmark from "commonmark";
-	import files from "../../static/newsletter.json";
+	import commonmark from 'commonmark/dist/commonmark.min.js';
+	import files from '../../static/newsletter.json';
 	files.list.reverse();
 	const reader = new commonmark.Parser();
 	const writer = new commonmark.HtmlRenderer();

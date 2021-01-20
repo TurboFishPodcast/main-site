@@ -1,8 +1,8 @@
 <script>
-  import Navbar from "./_components/Navbar.svelte";
-  import Footer from "./_components/Footer.svelte";
-  import Header from "./_components/Header.svelte";
-	import Article from "./_components/Article.svelte";
+  import Navbar from "../components/Navbar.svelte";
+  import Footer from "../components/Footer.svelte";
+  import Header from "../components/Header.svelte";
+	import Article from "../components/Article.svelte";
 	
 	let minutes = Math.round(((new Date('2021-01-19T17:00:00.000Z') - new Date()) / 1000 / 60));
 	setInterval(function(){

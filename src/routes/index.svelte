@@ -3,11 +3,11 @@
 </svelte:head>
 
 <script>
-	import Navbar from './_components/Navbar.svelte';
-  import Footer from "./_components/Footer.svelte";
-	import Header from './_components/Header.svelte';
-	import Article from './_components/Article.svelte';
-	import Cards from './_components/Cards.svelte';
+	import Navbar from '../components/Navbar.svelte';
+  import Footer from "../components/Footer.svelte";
+	import Header from '../components/Header.svelte';
+	import Article from '../components/Article.svelte';
+	import Cards from '../components/Cards.svelte';
 	let header = {
 		title: 'Welcome to Responsive!',
 		button: {
@@ -61,15 +61,16 @@
 </script>
 
 <Navbar />
+
 <Header {...header}>
 	Responsive is a community which is related to development and technology. Whether you need help, are looking to share a project, or are just looking to be in an active community, we are your north star!
 </Header>
-<Article title="About Us">
+<!-- <Article title="About Us">
 	Welcome to Responsive, a <a href="https://discord.gg/semsxbP" target="_blank">community</a> based on tech and development of all kinds! Whether you want to share your ideas, assist others in their coding endeavors, or just want to mingle amongst the masses, this is the place for you! At Responsive, we host many <a href="/events">events</a> that range in variety: from <a href="https://twitch.tv/vandesm14" target="_blank">livestreams</a> and <a href="/podcast">podcasts</a> to code jams and hackathons. Get comfy, settle in, and begin your journey with the Responsive community!
-</Article>
-<Article title="Our Story">
+</Article> -->
+<!-- <Article title="Our Story">
 	The Responsive community started out as just a simple <a href="https://twitch.tv/vandesm14" target="_blank">Twitch channel</a>. Leon (Leonski) and I (TheDevBird) created a <a href="https://discord.gg/semsxbP" target="_blank">Discord server</a> to help grow my Twitch community. At that point, all I streamed was web development projects. Since then, the community has grown at an exponential scale. Now, we're not only hosting streams, but regular conversation, <a href="/events">events</a>, and have even started a <a href="/podcast">podcast series</a>. For the future of Responsive, Leon and I plan on growing much larger than this, with our own help station, multiple events running in parallel, and even a whole stream-team & podcast group!
-</Article>
-<Cards {cards}/>
+</Article> -->
+<!-- <Cards {cards}/> -->
 
-<Footer />
+<!-- <Footer /> -->
