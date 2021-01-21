@@ -1,6 +1,6 @@
 <script>
 	import Button from './Button.svelte';
-	let scrollY;
+	let scrollY = 0;
 	$: top = scrollY === 0 ? '' : 'background';
 </script>
 
