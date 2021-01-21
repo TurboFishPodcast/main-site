@@ -60,5 +60,5 @@ div.background.mobile div {
 	</div>
 	<h1>{title}</h1>
 	<p><slot>{description}</slot></p>
-	<Button {...button}>{button.title}</Button>
+	<Button {...button} blank="true">{button.title}</Button>
 </div>

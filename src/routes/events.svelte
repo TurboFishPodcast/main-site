@@ -25,7 +25,7 @@
 <Article title="What's Happening">
 	<h2>Frontend/CLI Jam</h2>
 	<strong>Deadline:</strong> January 19th, 12pm EST ({@html Math.round(minutes / 60)} hours and {@html minutes % 60} minutes left)<br>
-	<strong>Submissions:</strong> <a href="https://forms.gle/e7doRjf6oi6dYgCg8">https://forms.gle/e7doRjf6oi6dYgCg8</a>
+	<strong>Submissions:</strong> <a target="_blank" href="https://forms.gle/e7doRjf6oi6dYgCg8">https://forms.gle/e7doRjf6oi6dYgCg8</a>
 	<p>
 		Build a to-do list app! Make either a frontend or CLI. It has to support:
 	</p>
@@ -34,7 +34,7 @@
 		<li>Renaming tasks</li>
 		<li>Checking/unchecking tasks</li>
 	</ul>
-	<i>Check out the event in our <a href="https://discord.gg/semsxbP">Discord server</a> for more info</i>
+	<i>Check out the event in our <a target="_blank" href="https://discord.gg/semsxbP">Discord server</a> for more info</i>
 </Article>
 
 <Footer />
