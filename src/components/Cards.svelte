@@ -3,15 +3,16 @@
 	import Button from './Button.svelte';
 	
 	export let cards = [];
-	let entry = {};
-	let element;
+	
 	let first = true;
-	$: inView = entry.isIntersecting;
+	let element;
+	let intersecting;
+
 	$: check = () => {
-		if (first && inView) {
+		if (first && intersecting) {
 			first = false;
 			return 'xyz-in';
-		} else if (first && !inView) {
+		} else if (first && !intersecting) {
 			return 'hidden';
 		} else {
 			return 'xyz-in';
@@ -50,7 +51,7 @@ h1 {
 }
 </style>
 
-<IntersectionObserver {element} threshold="0.3" bind:entry>
+<IntersectionObserver {element}  bind:intersecting threshold={0.3}>
 	<div class="cards" xyz="fade left-100 duration-6 stagger-3" bind:this={element}>
 		{#each cards as card}
 		<div class={'card ' + check()}>

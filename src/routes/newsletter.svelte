@@ -1,4 +1,9 @@
+<svelte:head>
+  <title>Responsive - Newsletter</title>
+</svelte:head>
+
 <script>
+	import { onMount } from 'svelte';
   import Navbar from '../components/Navbar.svelte';
   import Footer from '../components/Footer.svelte';
   import Header from '../components/Header.svelte';
@@ -8,6 +13,7 @@
 	import commonmark from 'commonmark/dist/commonmark.min.js';
 	import files from '../../static/newsletter.json';
 	files.list.reverse();
+
 	const reader = new commonmark.Parser();
 	const writer = new commonmark.HtmlRenderer();
 	let article = {
@@ -15,9 +21,11 @@
 		title: '',
 		date: ''
 	};
+
 	const strToDate = str => {
 		return new Date(`${str}T17:00:00.000Z`).toLocaleDateString();
 	};
+
 	const getArticle = (href, e) => {
 		if (!query.has('article')) window.history.pushState({}, '', window.location.href + '?article=' + href);
 		let title = e ? files.list[e.target.dataset.text].title : files.list.find(el => el.date === href).title;
@@ -32,16 +40,21 @@
 			article.date = strToDate(date);
 		});
 	};
-	const query = new URLSearchParams(window.location.search);
-	if (query.has('article')) {
-		getArticle(query.get('article'))
-		.catch(err => {
-			window.location.href = '/newsletter';
-		});
-	}
+	
 	const click = (e) => {
 		getArticle(files.list[e.target.dataset.text].date, e);
 	};
+
+	let query;
+	onMount(() => {
+		query = new URLSearchParams(window.location.search);
+		if (query.has('article')) {
+			getArticle(query.get('article'))
+			.catch(err => {
+				window.location.href = '/newsletter';
+			});
+		}
+	});
 </script>
 
 <Navbar />

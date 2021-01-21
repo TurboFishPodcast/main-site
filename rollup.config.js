@@ -10,9 +10,25 @@ import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import json from "@rollup/plugin-json";
 
+import { readdirSync, writeFileSync } from 'fs';
+
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+
+const getNewsletterManifest = () => {
+	const files = readdirSync('static/newsletters');
+	writeFileSync('static/newsletter.json', JSON.stringify({
+		list: files.filter(el => !el.startsWith('.')).map(el => {
+			return {
+				href: el,
+				title: el.split(' - ')[1].replace('.md', ''),
+				date: el.split(' - ')[0]
+			}
+		}),
+		latest: files[files.length - 1]
+	}));
+};
 
 const onwarn = (warning, onwarn) =>
 	(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
@@ -96,7 +112,8 @@ export default {
 				dedupe: ['svelte']
 			}),
 			commonjs(),
-			json()
+			json(),
+			getNewsletterManifest()
 		],
 		external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
 

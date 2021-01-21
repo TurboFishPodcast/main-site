@@ -22,9 +22,6 @@ div.navbar {
   font-size: 1.2rem;
   transition: 200ms ease-out;
 }
-.navbar.color {
-  background-color: var(--primary-color);
-}
 .navbar .navbar-background {
   position: absolute;
   z-index: -1;
@@ -45,7 +42,6 @@ div.navbar {
 
 <div class="navbar {top}" id="navbar">
 	<div class="navbar-background"></div>
-	<!-- <a href="/"><img src="/fav.png" alt="Logo"></a> -->
 	<Button href="/">Home</Button>
 	<Button href="/podcast">Podcast</Button>
 	<Button href="/events">Events</Button>

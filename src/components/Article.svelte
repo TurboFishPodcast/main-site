@@ -2,15 +2,16 @@
 	import IntersectionObserver from "svelte-intersection-observer";
 	import Button from './Button.svelte';
 	export let title = '', description = '', button = {}, animate = true;
-	let entry = {};
-	let element;
+	
 	let first = true;
-	$: inView = entry.isIntersecting;
+	let element;
+	let intersecting;
+	
 	$: check = () => {
-		if (first && inView) {
+		if (first && intersecting) {
 			first = false;
 			return 'xyz-in';
-		} else if (first && !inView) {
+		} else if (first && !intersecting) {
 			return 'hidden';
 		} else {
 			return 'xyz-in';
@@ -47,7 +48,7 @@ p {
 }
 </style>
 
-<IntersectionObserver {element} threshold="0.3" bind:entry>
+<IntersectionObserver {element} bind:intersecting threshold={0.3}>
 	<div class={`article ${animate && check()}`} xyz={animate && "fade duration-10"} bind:this={element}>
 		<h1>{title}</h1>
 		<p><slot>{description}</slot></p>
