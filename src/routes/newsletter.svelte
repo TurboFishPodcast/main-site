@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Responsive - Newsletter</title>
+  <title>{article.href ? 'Responsive | ' + article.href : 'Responsive - Newsletter'}</title>
 </svelte:head>
 
 <script>
@@ -10,17 +10,12 @@
 	import Article from '../components/Article.svelte';
 	import Button from '../components/Button.svelte';
 	
-	import commonmark from 'commonmark/dist/commonmark.min.js';
+	import { Converter } from 'showdown';
 	import files from '../../static/newsletter.json';
 	files.list.reverse();
 
-	const reader = new commonmark.Parser();
-	const writer = new commonmark.HtmlRenderer();
-	let article = {
-		content: '',
-		title: '',
-		date: ''
-	};
+	const converter = new Converter();
+	let article = {};
 
 	const strToDate = str => {
 		return new Date(`${str}T17:00:00.000Z`).toLocaleDateString();
@@ -28,16 +23,17 @@
 
 	const getArticle = (href, e) => {
 		if (!query.has('article')) window.history.pushState({}, '', window.location.href + '?article=' + href);
-		let title = e ? files.list[e.target.dataset.text].title : files.list.find(el => el.date === href).title;
-		let date = e ? files.list[e.target.dataset.text].date : files.list.find(el => el.date === href).date;
-		href = files.list.find(el => el.date === href).href;
-		document.title = `Responsive | ${href.split(' - ')[1].replace('.md', '')}`;
-		return fetch(`/newsletters/${href}`)
+		if (e) {
+			article = files.list[e.target.dataset.text];
+		} else {
+			article = files.list.find(el => el.date === href);
+		}
+
+		return fetch(`/newsletters/${article.href}`)
 		.then(res => res.text())
 		.then(text => {
-			article.content = writer.render(reader.parse(text)).replace(/(<a href=")(?!#)/g, '<a target="_blank" href="');
-			article.title = title;
-			article.date = strToDate(date);
+			article.content = converter.makeHtml(text).replace(/(<a href=")(?!#)/g, '<a target="_blank" href="');
+			article.date = strToDate(article.date);
 		});
 	};
 	
@@ -57,6 +53,34 @@
 	});
 </script>
 
+<style>
+:global(.article h1, .article h2) {
+	margin-top: 2rem;
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid rgba(250, 250, 250, 0.3);
+}
+
+:global(.article h1:not(:first-of-type)) {
+	margin-top: 4rem;
+}
+
+:global(.article h2) {
+	border: none;
+}
+
+:global(.article blockquote) {
+	border-left: 6px solid rgba(250, 250, 250, 0.8);
+	padding-left: 2rem;
+	background-color: rgba(250, 250, 250, 0.1);
+}
+
+:global(.article p) {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+</style>
+
 <Navbar />
 
 {#if article.title}
@@ -72,7 +96,7 @@
 	</Header>
 	<Article title={article.title || 'What\'s Cooking'}>
 		{#each files.list as file}
-		<Button href="javascript:void()" title={`${strToDate(file.date)} - ${file.title}`} click={click} inverted={files.list.indexOf(file) === 0} data={files.list.indexOf(file)}></Button>
+		<Button href="javascript:void(0)" title={`${strToDate(file.date)} - ${file.title}`} click={click} inverted={files.list.indexOf(file) === 0} data={files.list.indexOf(file)}></Button>
 		{/each}
 	</Article>
 {/if}
