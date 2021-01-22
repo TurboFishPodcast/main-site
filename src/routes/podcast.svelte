@@ -1,8 +1,10 @@
 <svelte:head>
-  <title>Responsive - Podcast</title>
+	<title>Responsive - Podcast</title>
+	<Head title="Responsive - Podcast" description="Two guys talk with the community about all things tech; from frameworks to tech pop-tarts, we've got you covered." />
 </svelte:head>
 
 <script>
+	import Head from "../components/Head.svelte";
 	import Navbar from '../components/Navbar.svelte';
   import Footer from "../components/Footer.svelte";
 	import Header from '../components/Header.svelte';
@@ -19,6 +21,7 @@
 </script>
 
 <Navbar />
+
 <Header {...header}>
 	Two guys talk with the community about all things tech; from frameworks to tech pop-tarts, we've got you covered.
 </Header>

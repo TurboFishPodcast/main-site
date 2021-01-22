@@ -41,11 +41,7 @@ a, a:visited {
 		font-size: 0.8rem;
 	}
 
-	/* .header {
-		background-color: var(--primary-color);
+	.article img {
+		max-width: 100% !important;
 	}
-
-	.navbar-background {
-		background-color: var(--secondary-color) !important;
-	} */
  }

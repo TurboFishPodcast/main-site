@@ -1,8 +1,10 @@
 <svelte:head>
   <title>Responsive - Home</title>
+	<Head title="Responsive" description="Responsive is a community which is related to development and technology. Whether you need help, are looking to share a project, or are just looking to be in an active community, we are your north star!" />
 </svelte:head>
 
 <script>
+	import Head from "../components/Head.svelte";
 	import Navbar from '../components/Navbar.svelte';
   import Footer from "../components/Footer.svelte";
 	import Header from '../components/Header.svelte';

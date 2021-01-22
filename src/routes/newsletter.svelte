@@ -1,9 +1,11 @@
 <svelte:head>
-  <title>{article.href ? 'Responsive | ' + article.href : 'Responsive - Newsletter'}</title>
+  <title>{article.title ? 'Responsive | ' + article.title : 'Responsive - Newsletter'}</title>
+	<Head title="Responsive - Newsletter" description="We release a weekly newsletter every Monday around 12pm EST. If we're feeling exceptional, we may even release another one on the Friday of the same week!" />
 </svelte:head>
 
 <script>
 	import { onMount } from 'svelte';
+	import Head from "../components/Head.svelte";
   import Navbar from '../components/Navbar.svelte';
   import Footer from '../components/Footer.svelte';
   import Header from '../components/Header.svelte';
@@ -12,7 +14,9 @@
 	
 	import { Converter } from 'showdown';
 	import files from '../../static/newsletter.json';
-	files.list.reverse();
+	files.list.sort((a, b) => {
+    return (a.date < b.date) ? 1 : (a.date > b.date) ? -1 : 0;
+	});
 
 	const converter = new Converter();
 	let article = {};
@@ -78,6 +82,10 @@
 :global(.article p) {
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
+}
+
+:global(.article img) {
+	max-width: 50%;
 }
 </style>
 
