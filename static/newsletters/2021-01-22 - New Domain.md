@@ -92,6 +92,7 @@ Leon and I really appreciate all of the feedback and activity in the Responsive 
 + [Shane Vandegrift](https://twitter.com/vandesm14)
 
 ### Sources
++ [Yang Luo](https://twitter.com/hsluoyz) - Project Showcase
 + [Bookie0](https://repl.it/@Bookie0) - Featured Article
 + [Adam Argyle](https://twitter/argyleink) - News
 + [Thomas Steiner](https://twitter.com/tomayac) - News
