@@ -59,33 +59,51 @@
 
 <style>
 :global(.article h1, .article h2) {
-	margin-top: 2rem;
-	margin-bottom: 0.5rem;
-	padding-bottom: 0.5rem;
-	border-bottom: 1px solid rgba(250, 250, 250, 0.3);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.3);
 }
 
 :global(.article h1:not(:first-of-type)) {
-	margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 :global(.article h2) {
-	border: none;
+  border: none;
 }
 
 :global(.article blockquote) {
-	border-left: 6px solid rgba(250, 250, 250, 0.8);
-	padding-left: 2rem;
-	background-color: rgba(250, 250, 250, 0.1);
+  padding-left: 2rem;
+  border-left: 6px solid rgba(250, 250, 250, 0.8);
+  background-color: #373737;
 }
 
 :global(.article p) {
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 :global(.article img) {
-	max-width: 50%;
+  max-width: 50%;
+}
+
+:global(.article code) {
+  padding: 2px;
+  border-radius: 2px;
+  background-color: #373737;
+  color: #ff4a77;
+}
+
+:global(.article pre > code) {
+  padding: 0;
+}
+
+:global(.article pre) {
+  padding: 4px;
+  width: max-content;
+  border-radius: 2px;
+  background-color: #373737;
 }
 </style>
 

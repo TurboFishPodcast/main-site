@@ -15,7 +15,7 @@ As our ever-growing media outreach has gotten larger, I decided to add more upda
 Casbin is a flexible authorization library developed for a wide variety of backend languages (and even a few frontend languages). Along with having support for a plethora of languages, it's also cross-platform, making it usable basically anywhere! It's super simple to setup and even simpler to modify the mechanism. Casbin is built in adapters (middleware), allowing full control and customization over every part of it. Overall, Casbin is a number one for any project that requires auth!
 
 # Featured Article
-**Written by: [Bookie0](#)**<br>
+**Written by: [Bookie0](https://repl.it/@Bookie0)**<br>
 ## The Pythagorean Theorem
 
 ### What it Is
@@ -84,7 +84,7 @@ To calculate the area of a square, it's `side^2`, so with the formula that squar
 **Where:** [https://twitch.tv/vandesm14](https://twitch.tv/vandesm14) and [https://anchor.fm/responsive](https://anchor.fm/responsive)<br>
 
 # Thanks for Reading!
-Leon and I really appreciate all of the feedback and activity in the Responsive Community. We hope to see you see you again on Monday!
+Leon and I really appreciate all of the feedback and activity in the Responsive Community. We hope to see you see you again on Monday!<br>
 (maybe Leon will write something... if I let him)
 
 ## Credits
