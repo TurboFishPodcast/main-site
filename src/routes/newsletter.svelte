@@ -1,9 +1,11 @@
 <svelte:head>
-  <title>{article.href ? 'Responsive | ' + article.href : 'Responsive - Newsletter'}</title>
+  <title>{article.title ? 'Responsive | ' + article.title : 'Responsive - Newsletter'}</title>
+	<Head title="Responsive - Newsletter" description="We release a weekly newsletter every Monday around 12pm EST. If we're feeling exceptional, we may even release another one on the Friday of the same week!" />
 </svelte:head>
 
 <script>
 	import { onMount } from 'svelte';
+	import Head from "../components/Head.svelte";
   import Navbar from '../components/Navbar.svelte';
   import Footer from '../components/Footer.svelte';
   import Header from '../components/Header.svelte';
@@ -12,7 +14,9 @@
 	
 	import { Converter } from 'showdown';
 	import files from '../../static/newsletter.json';
-	files.list.reverse();
+	files.list.sort((a, b) => {
+    return (a.date < b.date) ? 1 : (a.date > b.date) ? -1 : 0;
+	});
 
 	const converter = new Converter();
 	let article = {};
@@ -24,9 +28,9 @@
 	const getArticle = (href, e) => {
 		if (!query.has('article')) window.history.pushState({}, '', window.location.href + '?article=' + href);
 		if (e) {
-			article = files.list[e.target.dataset.text];
+			article = {...files.list.find(el => el.date === e.target.dataset.text)};
 		} else {
-			article = files.list.find(el => el.date === href);
+			article = {...files.list.find(el => el.date === href)};
 		}
 
 		return fetch(`/newsletters/${article.href}`)
@@ -38,7 +42,7 @@
 	};
 	
 	const click = (e) => {
-		getArticle(files.list[e.target.dataset.text].date, e);
+		getArticle(files.list.find(el => el.date === e.target.dataset.text).date, e);
 	};
 
 	let query;
@@ -55,38 +59,60 @@
 
 <style>
 :global(.article h1, .article h2) {
-	margin-top: 2rem;
-	margin-bottom: 0.5rem;
-	padding-bottom: 0.5rem;
-	border-bottom: 1px solid rgba(250, 250, 250, 0.3);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.3);
 }
 
 :global(.article h1:not(:first-of-type)) {
-	margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 :global(.article h2) {
-	border: none;
+  border: none;
 }
 
 :global(.article blockquote) {
-	border-left: 6px solid rgba(250, 250, 250, 0.8);
-	padding-left: 2rem;
-	background-color: rgba(250, 250, 250, 0.1);
+  padding-left: 2rem;
+  border-left: 6px solid rgba(250, 250, 250, 0.8);
+  background-color: #373737;
 }
 
 :global(.article p) {
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+:global(.article img) {
+  max-width: 50%;
+}
+
+:global(.article code) {
+  padding: 2px;
+  border-radius: 2px;
+  background-color: #373737;
+  color: #ff4a77;
+}
+
+:global(.article pre > code) {
+  padding: 0;
+}
+
+:global(.article pre) {
+  padding: 4px;
+  width: max-content;
+  border-radius: 2px;
+  background-color: #373737;
 }
 </style>
 
 <Navbar />
 
 {#if article.title}
-	<Header title={article.title}>
-	</Header>
+	<Header title={article.title}></Header>
 	<Article animate={false}>
+		<a href="javascript:void(0)" on:click={() => {article = {}; window.history.pushState({}, '', '/newsletter')}}>&lt;- Go Back</a><br>
 		<i>Posted on: {@html article.date}</i>
 		{@html article.content}
 	</Article>
@@ -96,7 +122,7 @@
 	</Header>
 	<Article title={article.title || 'What\'s Cooking'}>
 		{#each files.list as file}
-		<Button href="javascript:void(0)" title={`${strToDate(file.date)} - ${file.title}`} click={click} inverted={files.list.indexOf(file) === 0} data={files.list.indexOf(file)}></Button>
+		<Button href="javascript:void(0)" title={`${strToDate(file.date)} - ${file.title}`} click={click} inverted={files.list.indexOf(file) === 0} data={file.date}></Button>
 		{/each}
 	</Article>
 {/if}
