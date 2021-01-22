@@ -1,6 +1,6 @@
-**Written by: [Writer]()**
+**Written by: [Shane Vandegrift](https://twitter.com/vandesm14)**
 # Community Updates
-Greeting
+Good afternoon everyone! I hope you all have had a great day so far! This is the second newsletter under our belt and we're really happy to share it with you! First things first, check the URL at the top, you'll be surprised when you see it.
 
 ## Update Name
 Description
@@ -16,7 +16,7 @@ Description
 Article
 <!-- > Quote *([@User]())* -->
 
-# Helpful Resources
+# News
 
 
 # Upcoming Events

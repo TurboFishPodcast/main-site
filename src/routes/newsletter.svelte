@@ -24,9 +24,9 @@
 	const getArticle = (href, e) => {
 		if (!query.has('article')) window.history.pushState({}, '', window.location.href + '?article=' + href);
 		if (e) {
-			article = files.list[e.target.dataset.text];
+			article = {...files.list.find(el => el.date === e.target.dataset.text)};
 		} else {
-			article = files.list.find(el => el.date === href);
+			article = {...files.list.find(el => el.date === href)};
 		}
 
 		return fetch(`/newsletters/${article.href}`)
@@ -38,7 +38,7 @@
 	};
 	
 	const click = (e) => {
-		getArticle(files.list[e.target.dataset.text].date, e);
+		getArticle(files.list.find(el => el.date === e.target.dataset.text).date, e);
 	};
 
 	let query;
@@ -84,9 +84,9 @@
 <Navbar />
 
 {#if article.title}
-	<Header title={article.title}>
-	</Header>
+	<Header title={article.title}></Header>
 	<Article animate={false}>
+		<a href="javascript:void(0)" on:click={() => {article = {}; window.history.pushState({}, '', '/newsletter')}}>&lt;- Go Back</a><br>
 		<i>Posted on: {@html article.date}</i>
 		{@html article.content}
 	</Article>
@@ -96,7 +96,7 @@
 	</Header>
 	<Article title={article.title || 'What\'s Cooking'}>
 		{#each files.list as file}
-		<Button href="javascript:void(0)" title={`${strToDate(file.date)} - ${file.title}`} click={click} inverted={files.list.indexOf(file) === 0} data={files.list.indexOf(file)}></Button>
+		<Button href="javascript:void(0)" title={`${strToDate(file.date)} - ${file.title}`} click={click} inverted={files.list.indexOf(file) === 0} data={file.date}></Button>
 		{/each}
 	</Article>
 {/if}
