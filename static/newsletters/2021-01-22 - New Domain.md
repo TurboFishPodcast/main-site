@@ -83,6 +83,17 @@ To calculate the area of a square, it's `side^2`, so with the formula that squar
 **When:** January 23rd, 1pm EST<br>
 **Where:** [https://twitch.tv/vandesm14](https://twitch.tv/vandesm14) and [https://anchor.fm/responsive](https://anchor.fm/responsive)<br>
 
+## Mini-Jam
+**Deadline:** January 25th, 12pm EST<br>
+**Submissions:** [https://forms.gle/e7doRjf6oi6dYgCg8](https://forms.gle/e7doRjf6oi6dYgCg8)<br>
+Build a code cracker! You can do this however you'd like, using any techniques you know. Rule wise, as long as the actual cracking algorithm doesn't know the code length or the code itself, it's good.
+
+The things your cracker must have:
++ User input for the code they want the algorithm to guess.
++ Output which shows the original code and the code as guessed by the algorithm.
+
+Anything else is up to you.
+
 # Thanks for Reading!
 Leon and I really appreciate all of the feedback and activity in the Responsive Community. We hope to see you see you again on Monday!<br>
 (maybe Leon will write something... if I let him)
@@ -92,6 +103,7 @@ Leon and I really appreciate all of the feedback and activity in the Responsive 
 + [Shane Vandegrift](https://twitter.com/vandesm14)
 
 ### Sources
++ [Yang Luo](https://twitter.com/hsluoyz) - Project Showcase
 + [Bookie0](https://repl.it/@Bookie0) - Featured Article
 + [Adam Argyle](https://twitter/argyleink) - News
 + [Thomas Steiner](https://twitter.com/tomayac) - News
