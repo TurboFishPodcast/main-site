@@ -10,9 +10,9 @@
   import Header from "../components/Header.svelte";
 	import Article from "../components/Article.svelte";
 	
-	let minutes = Math.round(((new Date('2021-01-25T17:00:00.000Z') - new Date()) / 1000 / 60));
+	let minutes = Math.round(((new Date('2021-02-01T17:00:00.000Z') - new Date()) / 1000 / 60));
 	setInterval(function(){
-		minutes = Math.round(((new Date('2021-01-25T17:00:00.000Z') - new Date()) / 1000 / 60));
+		minutes = Math.round(((new Date('2021-02-01T17:00:00.000Z') - new Date()) / 1000 / 60));
 	}, 10000);
 </script>
 
@@ -26,15 +26,15 @@
 </Header>
 <Article title="What's Happening">
 	<h2>Mini-Jam</h2>
-	<strong>Deadline:</strong> January 25th, 12pm EST ({@html Math.round(minutes / 60)} hours and {@html minutes % 60} minutes left)<br>
+	<strong>Deadline:</strong> February 1st, 12pm EST ({@html Math.round(minutes / 60)} hours and {@html minutes % 60} minutes left)<br>
 	<strong>Submissions:</strong> <a target="_blank" href="https://forms.gle/e7doRjf6oi6dYgCg8">https://forms.gle/e7doRjf6oi6dYgCg8</a>
-	<p>Build a code cracker! You can do this however you&#39;d like, using any techniques you know. Rule wise, as long as the actual cracking algorithm doesn&#39;t know the code length or the code itself, it&#39;s good.</p>
-	<p>The things your cracker must have:</p>
+	<p>Build either a game or program which the user can only press keys if instructed to! For example, if you have a game in which the user moves around with the WSAD keys, the game will have to strictly tell the user when to press the keys.</p>
+	<p>The one and only requirement:</p>
 	<ul>
-	<li>User input for the code they want the algorithm to guess.</li>
-	<li>Output which shows the original code and the code as guessed by the algorithm.</li>
+	<li>The user can only press a key if the program or game tells them to</li>
 	</ul>
-	<p>Anything else is up to you.</p>
+	<p>Everything else is up to you.</p>
+	<i>To further explain: You cannot just say "use wasd to move" and call it a day. Each time the user would need to hit say the "w" key, you'd need to explicitly tell them to every single time</i>
 	<i>Check out the event in our <a target="_blank" href="https://discord.gg/semsxbP">Discord server</a> for more info</i>
 </Article>
 
