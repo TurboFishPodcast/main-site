@@ -1,6 +1,6 @@
 **Written by: [Shane Vandegrift](https://twitter.com/vandesm14)**
 # Community Updates
-Good afternoon everyone! So, this is a bit of a strange time to release a newsletter as we didn't release one this past Monday. This is because I thought it would be better to let all of the good news formulate throughout the week for collection on Friday, today. So, without further or due, here is the third edition of our newsletter. Enjoy!
+Good afternoon everyone! So, this is a bit of a strange time to release a newsletter as we didn't release one this past Monday. This is because I thought it would be better to let all of the good news formulate throughout the week for collection on Friday, today. So, without further ado, here is the third edition of our newsletter. Enjoy!
 
 ## Featured Article
 I'll start off by saying I'm sorry for asking for featured articles VERY last minute. I'd mainly ask *on the day* of writing, which is yet another last minute process. So here's the updates with our underlying process:
