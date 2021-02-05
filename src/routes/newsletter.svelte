@@ -80,8 +80,8 @@
 }
 
 :global(.article p) {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
 }
 
 :global(.article img) {
