@@ -12,11 +12,11 @@
 <meta property="og:url" content="https://respdev.com">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content={description}>
-<meta property="og:image" content="banner.png">
+<meta property="og:image" content="/banner.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://respdev.com">
 <meta property="twitter:title" content="{title}">
 <meta property="twitter:description" content={description}>
-<meta property="twitter:image" content="banner.png">
+<meta property="twitter:image" content="/banner.png">
