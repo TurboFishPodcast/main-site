@@ -10,13 +10,18 @@
   import Header from "../components/Header.svelte";
 	import Article from "../components/Article.svelte";
 	
-	let minutes = Math.round(((new Date('2021-04-17T04:00:00.000Z') - new Date()) / 1000 / 60));
+	let date = new Date('2021-05-28T04:00:00.000Z');
+	let minutes = Math.round(((date - new Date()) / 1000 / 60));
 	setInterval(function(){
-		minutes = Math.round(((new Date('2021-04-17T04:00:00.000Z') - new Date()) / 1000 / 60));
+		minutes = Math.round(((date - new Date()) / 1000 / 60));
 	}, 10000);
 </script>
 
 <style>
+	p {
+		display: block;
+		margin: 2rem 0;
+	}
 </style>
 
 <Navbar />
@@ -25,27 +30,28 @@
 	We host a variety of weekly events such as hackathons, code jams, and even open discussions! All of these events are open to everyone, even late-arrivals! Most of these events last for about a week, and the results come out 1-3 days after.
 </Header>
 <Article title="What's Happening">
-	<h2>Sci-Fi Interface Contest</h2>
-	<p><strong><strong>This jam will be based around sci-fi interfaces!</strong></strong> Your UI can be whatever you want, this is a design &amp; creativity contest! The more gizmos, animations, and sci-fi flair, the better! A good reference for your UI would be sci-fi interfaces used in movies and TV shows. Be creative!</p><br>
-	<p>PS: If you only know a language that can&#39;t do GUIs but can do CLIs, that works too! (choose what you&#39;re most comfortable with)</p><br>
-	<p><strong><strong>Winning PRIZE:</strong> 1 month of Discord Nitro</strong></p>
-	<p><strong>Starts on:</strong> Friday, April 2nd
-	<strong>Ends on:</strong> Friday, April 16th</p>
-	<p><strong>Submit To:</strong> &lt;#782047133254942730&gt; or <a href="https://forms.gle/e7doRjf6oi6dYgCg8">https://forms.gle/e7doRjf6oi6dYgCg8</a></p><br>
-	<p><strong><strong>Requirements:</strong></strong></p>
-	<ol>
-	<li>Your UI <strong>MUST</strong> be created with code, no graphic design software or animation software should be used</li>
-	<li>Your UI must have the following:</li>
-	<li>A popup/popout with at least 1 form of input (eg: a right-click menu with buttons)</li>
-	<li>At least 3 different types of input (buttons, sliders, pages, dials, textboxes, dropdowns, etc)</li>
-	</ol>
-	<p><strong><strong>Bonus Points:</strong></strong></p>
-	<ul>
-	<li>Although functionality isn&#39;t really important outside of a UI standpoint, if you add scripting to your UI to have buttons and knobs change values and change display graphics, you&#39;ll get some sweet bonus points!</li>
-	<li>For the web devs out there, SVG animations would be a great touch!</li>
-	</ul>
-	<p><strong><strong>Judging:</strong></strong><br>
-	This event will be judged by one or more judges (I won&#39;t be a judge as I&#39;ll be participating with you guys 🙌)</p>		
+	<p>Hi everyone! I hope everyone is doing well with their finals and the rest!</p>
+		<p>This is the Nth jam we&#39;ve had (no idea what number we&#39;re actually on). But guess what? It&#39;s 3 weeks this time!</p>
+		<p>The theme: <strong>puzzles</strong>! </p>
+		<p><strong>Starts on: Friday, May 7th</strong> (today)<br>
+		<strong>Ends on: Friday, May 28th</strong><br>
+		<u>You have 3 weeks (21days)</u></p>
+		<p><u>Submit To:</u><br>
+		<a href="https://forms.gle/e7doRjf6oi6dYgCg8">https://forms.gle/e7doRjf6oi6dYgCg8</a></p>
+		<p><u>Requirements:</u><br>
+		Only requirement is that you have to create some sort of puzzle. That&#39;s it.</p>
+		<p><u>Bonus Points:</u></p>
+			<ul>
+				<li>You can also add several levels to make it longer!</li>
+				<li>You can combine multiple puzzle concepts at once!</li>
+			</ul>
+		<p><u>Judging:</u><br>
+		After the jam is up, everyone in the server will be able to vote on who they thought made the best creation.</p>
+		<p><u>Prize:</u><br>
+		Undefined.</p>
+		<p>(A custom role in the <a href="/discord">server</a>, and unlimited bragging rights)</p>
+		<p><em>Best of luck!</em></p>
+		
 </Article>
 
 <Footer />
