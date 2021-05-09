@@ -1,6 +1,7 @@
 <svelte:head>
 	<title>Responsive - Events</title>
-	<Head title="Responsive - Events" description="We host a variety of weekly events such as hackathons, code jams, and even open discussions! All of these events are open to everyone, even late-arrivals! Most of these events last for about a week, and the results come out 1-3 days after." />
+	<Head title="Responsive - Discord" description="Responsive is more than just a Discord server, we're an action-packed tech-oriented community that always has something new in store! Join us for exciting new ideas and events!" />
+	<meta http-equiv="refresh" content="2; url = https://discord.gg/UKQUkhjxRT" />
 </svelte:head>
 
 <script>
@@ -12,7 +13,7 @@
 	let header = {
 		title: 'Discord',
 		button: {
-			href: 'https://discord.gg/semsxbP',
+			href: 'https://discord.gg/UKQUkhjxRT',
 			title: 'Redirect',
 			icon: '/social/discord.png'
 		}
