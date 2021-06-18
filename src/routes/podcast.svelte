@@ -4,11 +4,11 @@
 </svelte:head>
 
 <script>
-	import Head from "../components/Head.svelte";
-	import Navbar from '../components/Navbar.svelte';
-  import Footer from "../components/Footer.svelte";
-	import Header from '../components/Header.svelte';
-	import Article from '../components/Article.svelte';
+	import Head from "../comps/Head.svelte";
+	import Navbar from '../comps/Navbar.svelte';
+  import Footer from "../comps/Footer.svelte";
+	import Header from '../comps/Header.svelte';
+	import Article from '../comps/Article.svelte';
 	let header = {
 		title: 'The Responsive Podcast',
 		button: {

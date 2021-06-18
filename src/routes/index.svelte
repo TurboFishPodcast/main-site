@@ -4,12 +4,12 @@
 </svelte:head>
 
 <script>
-	import Head from "../components/Head.svelte";
-	import Navbar from '../components/Navbar.svelte';
-  import Footer from "../components/Footer.svelte";
-	import Header from '../components/Header.svelte';
-	import Article from '../components/Article.svelte';
-	import Cards from '../components/Cards.svelte';
+	import Head from "../comps/Head.svelte";
+	import Navbar from '../comps/Navbar.svelte';
+  import Footer from "../comps/Footer.svelte";
+	import Header from '../comps/Header.svelte';
+	import Article from '../comps/Article.svelte';
+	import Cards from '../comps/Cards.svelte';
 	let header = {
 		title: 'Welcome to Responsive!',
 		button: {

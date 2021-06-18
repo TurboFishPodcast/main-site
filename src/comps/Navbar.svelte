@@ -45,5 +45,4 @@ div.navbar {
 	<Button href="/">Home</Button>
 	<Button href="/podcast">Podcast</Button>
 	<Button href="/events">Events</Button>
-	<Button href="/newsletter" id="nav-newsletter">Newsletter</Button>
 </div>
