@@ -37,7 +37,7 @@
 		<strong>Ends on: Friday, May 28th</strong><br>
 		<u>You have 3 weeks (21days)</u></p>
 		<p><u>Submit To:</u><br>
-		<a href="https://forms.gle/e7doRjf6oi6dYgCg8">https://forms.gle/e7doRjf6oi6dYgCg8</a></p>
+		<a rel="external" href="https://forms.gle/e7doRjf6oi6dYgCg8">https://forms.gle/e7doRjf6oi6dYgCg8</a></p>
 		<p><u>Requirements:</u><br>
 		Only requirement is that you have to create some sort of puzzle. That&#39;s it.</p>
 		<p><u>Bonus Points:</u></p>
