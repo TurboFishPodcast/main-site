@@ -1,12 +1,11 @@
 name: Build Pages
 on:
   push:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
   build:
-    runs-on: ubuntu-linux
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
