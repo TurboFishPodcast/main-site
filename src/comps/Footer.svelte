@@ -25,6 +25,7 @@
 		width: 60px;
 		height: 60px;
 		border-radius: 50%;
+		filter: grayscale(1);
 	}
 	p {
 		color: #999999;
