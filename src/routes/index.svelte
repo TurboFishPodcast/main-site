@@ -49,16 +49,6 @@
 				inverted: true
 			}
 		},
-		{
-			title: 'Newsletter',
-			description: 'We release a weekly newsletter every Monday at 12pm EST. If we\'re feeling exceptional, we may even release another one on the Friday of the same week!',
-			href: '/newsletter',
-			button: {
-				href: '/newsletter',
-				title: 'Read',
-				inverted: true
-			}
-		}
 	];
 </script>
 
