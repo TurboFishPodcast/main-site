@@ -2,6 +2,9 @@
 	export let title = '', description = '';
 </script>
 
+<meta name="author" content="Shane & Leon">
+<meta name="keywords" content="responsive, respdev, development, coding, community, discord, podcast">
+
 <!-- Primary Meta Tags -->
 <meta name="title" content="{title}">
 <meta name="description" content={description}>
