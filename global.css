@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
 :root {
-	--primary-color: #991133;
+	--primary-color: #A51333;
 	--secondary-color: #212121;
 	--primary-text: #FAFAFA;
-	--secondary-text: #dd3660;
+	--secondary-text: #ec2b55;
 }
 
 * {
@@ -44,4 +46,4 @@ a, a:visited {
 	.article img {
 		max-width: 100% !important;
 	}
- }
+}
