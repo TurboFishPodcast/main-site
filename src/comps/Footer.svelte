@@ -1,11 +1,11 @@
 <footer class="footer" id="footer">
 	<div>
-		<a target="_blank" href="https://anchor.fm/responsive"><img src="/social/anchor.png" alt=""></a>
-		<a target="_blank" href="https://discord.gg/semsxbP"><img src="/social/discord.png" alt=""></a>
-		<a target="_blank" href="mailto:responsivedev@pm.me"><img src="/social/email.png" alt=""></a>
-		<a target="_blank" href="https://github.com/ResponsiveDev"><img src="/social/github.png" alt="" style="background-color: white"></a>
-		<a target="_blank" href="https://twitch.tv/vandesm14"><img src="/social/twitch.png" alt=""></a>
-		<a target="_blank" href="https://twitter.com/RespDev"><img src="/social/twitter.png" alt=""></a>
+		<a target="_blank" rel="external" href="https://anchor.fm/responsive"><img src="/social/anchor.png" alt=""></a>
+		<a target="_blank" rel="external" href="https://discord.gg/semsxbP"><img src="/social/discord.png" alt=""></a>
+		<a target="_blank" rel="external" href="mailto:responsivedev@pm.me"><img src="/social/email.png" alt=""></a>
+		<a target="_blank" rel="external" href="https://github.com/ResponsiveDev"><img src="/social/github.png" alt="" style="background-color: white"></a>
+		<a target="_blank" rel="external" href="https://twitch.tv/vandesm14"><img src="/social/twitch.png" alt=""></a>
+		<a target="_blank" rel="external" href="https://twitter.com/RespDev"><img src="/social/twitter.png" alt=""></a>
 	</div>
 	<p>© Copyright {@html new Date().getFullYear()} Responsive</p>
 </footer>
@@ -28,16 +28,17 @@
   	transition: 150ms ease-out;
 		border-radius: 50%;
 		opacity: 0.5;
+		filter: grayscale(1);
 	}
 	div a:hover {
   	transform: scale(1.1);
+		filter: grayscale(0);
 		opacity: 1;
 	}
 	div img {
 		width: 60px;
 		height: 60px;
 		border-radius: 50%;
-		filter: grayscale(1);
 	}
 	p {
 		color: #999999;

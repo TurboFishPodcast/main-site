@@ -27,7 +27,7 @@
 			href: '/events',
 			button: {
 				href: '/events',
-				title: 'Sign Up',
+				title: 'Join In',
 				inverted: true
 			}
 		},

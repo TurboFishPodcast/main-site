@@ -9,6 +9,7 @@
   import Footer from "../comps/Footer.svelte";
   import Header from "../comps/Header.svelte";
 	import Article from "../comps/Article.svelte";
+	import Button from '../comps/Button.svelte';
 	
 	let date = new Date('2021-05-28T04:00:00.000Z');
 	let minutes;
@@ -24,15 +25,25 @@
 <Article title="About">
 	We host a variety of events such as hackathons, monthly themes, and open discussions! All events are open to any language or skillset!
 </Article>
+
 <Article title="What's Happening">
 	<h2>No Events to Show</h2>
 </Article>
+
+<center>
+	<Button href="/discord" icon="/social/discord.png">
+		Join In
+	</Button>
+</center>
 
 <Footer />
 
 <style>
 	p {
 		display: block;
+		margin: 2rem 0;
+	}
+</style>play: block;
 		margin: 2rem 0;
 	}
 </style>
