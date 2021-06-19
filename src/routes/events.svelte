@@ -37,13 +37,3 @@
 </center>
 
 <Footer />
-
-<style>
-	p {
-		display: block;
-		margin: 2rem 0;
-	}
-</style>play: block;
-		margin: 2rem 0;
-	}
-</style>
