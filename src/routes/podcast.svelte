@@ -9,24 +9,21 @@
   import Footer from "../comps/Footer.svelte";
 	import Header from '../comps/Header.svelte';
 	import Article from '../comps/Article.svelte';
-	let header = {
-		title: 'The Responsive Podcast',
-		button: {
-			title: 'Episodes',
-			href: 'https://anchor.fm/responsive',
-			icon: '/social/anchor.png',
-			blank: true
-		}
-	};
+	import Button from '../comps/Button.svelte';
 </script>
 
 <Navbar />
 
-<Header {...header}>
-	Two guys talk with the community about all things tech; from frameworks to tech pop-tarts, we've got you covered.
-</Header>
+<Header>The Responsive Podcast</Header>
 <Article title="Our Podcast">
-	The Responsive Podcast is a podcast that releases eposides at least two times a week with each episode being an hour and a half long. We enjoy sharing tips, tricks, and tools for everything development. Leon and I are widely open to feedback, so even simple suggestion such as to turn up one of our mics, please feel free to ask! At the bottom of this page, you will find the various ways to contact us.
+	The Responsive Podcast is a podcast that releases eposides at least two times a month with each episode being around 30 minutes to an hour long. We enjoy sharing tips, tricks, and tools for everything development. Leon and I are widely open to feedback, so even simple suggestion such as to turn up one of our mics, please feel free to ask!
 </Article>
+
+<center>
+	<Button href="https://anchor.fm/responsive"  icon="/social/anchor.png">
+		Take a Listen
+	</Button>
+</center>
+
 
 <Footer />

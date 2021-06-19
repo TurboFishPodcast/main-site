@@ -19,6 +19,14 @@
 	}
 </script>
 
+<IntersectionObserver {element} bind:intersecting threshold={0.3}>
+	<div class={`article ${animate && check()}`} xyz={animate && "fade duration-10"} bind:this={element}>
+		<h1>{title}</h1>
+		<p><slot>{description}</slot></p>
+		<Button {...button}>{button.title}</Button>
+	</div>
+</IntersectionObserver>
+
 <style>
 div {
   display: flex;
@@ -47,11 +55,3 @@ p {
 	line-height: 2.2rem;
 }
 </style>
-
-<IntersectionObserver {element} bind:intersecting threshold={0.3}>
-	<div class={`article ${animate && check()}`} xyz={animate && "fade duration-10"} bind:this={element}>
-		<h1>{title}</h1>
-		<p><slot>{description}</slot></p>
-		<Button {...button}>{button.title}</Button>
-	</div>
-</IntersectionObserver>

@@ -6,6 +6,14 @@
 
 <svelte:window bind:scrollY></svelte:window>
 
+<div class="navbar {top}" id="navbar">
+	<div class="navbar-background"></div>
+	<Button href="/">Home</Button>
+	<Button href="/podcast">Podcast</Button>
+	<Button href="/events">Events</Button>
+	<Button href="/discord">Discord</Button>
+</div>
+
 <style>
 div.navbar {
   position: fixed;
@@ -15,13 +23,12 @@ div.navbar {
   align-items: center;
   flex-direction: row;
   margin-bottom: -4vh;
-  padding: 1vh 1vw;
-	padding-left: 9vw;
+  padding: 1vh 9vw;
   max-width: 100vw;
   width: 100%;
   text-align: center;
   font-size: 1.2rem;
-  transition: 200ms ease-out;
+	/* clip: rect(0, 91vw, 10vh, 9vw); */
 }
 .navbar .navbar-background {
   position: absolute;
@@ -33,18 +40,10 @@ div.navbar {
   box-shadow: 0 0 9px 0 #000000bb;
   opacity: 0;
   transition: 200ms ease-out;
-  transform: translateX(-100vw);
+  /* transform: translateX(-100vw); */
 }
 .navbar.background .navbar-background {
   opacity: 1;
   transform: translateX(0);
 }
 </style>
-
-<div class="navbar {top}" id="navbar">
-	<div class="navbar-background"></div>
-	<Button href="/">Home</Button>
-	<Button href="/podcast">Podcast</Button>
-	<Button href="/events">Events</Button>
-	<Button href="/discord">Discord</Button>
-</div>

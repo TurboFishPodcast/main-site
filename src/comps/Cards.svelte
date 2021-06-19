@@ -20,6 +20,20 @@
 	}
 </script>
 
+<IntersectionObserver {element}  bind:intersecting threshold={0.3}>
+	<div class="cards" xyz="fade left-100 duration-6 stagger-3" bind:this={element}>
+		{#each cards as card}
+		<div class={'card ' + check()}>
+			<a href={card.href}><h1>{card.title}</h1></a>
+			<p>{@html card.description}</p>
+			<div style="display: flex; flex: 1; margin-top: 1.3rem">
+				<Button {...card.button} style="margin-top: auto; font-size: 1.4rem;"></Button>
+			</div>
+		</div>
+		{/each}
+	</div>
+</IntersectionObserver>
+
 <style>
 .cards {
 	display: flex;
@@ -51,17 +65,3 @@ h1 {
 	text-align: center;
 }
 </style>
-
-<IntersectionObserver {element}  bind:intersecting threshold={0.3}>
-	<div class="cards" xyz="fade left-100 duration-6 stagger-3" bind:this={element}>
-		{#each cards as card}
-		<div class={'card ' + check()}>
-			<a href={card.href}><h1>{card.title}</h1></a>
-			<p>{@html card.description}</p>
-			<div style="display: flex; flex: 1; margin-top: 1.3rem">
-				<Button {...card.button} style="margin-top: auto; font-size: 1.4rem;"></Button>
-			</div>
-		</div>
-		{/each}
-	</div>
-</IntersectionObserver>

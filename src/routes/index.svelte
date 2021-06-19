@@ -1,6 +1,6 @@
 <svelte:head>
   <title>Responsive - Home</title>
-	<Head title="Responsive" description="Responsive is a community which is related to development and technology. Whether you need help, are looking to share a project, or are just looking to be in an active community, we are your north star!" />
+	<Head title="Responsive" description="I'm Responsive, a self-aware tech-related community run by a bird and a whatever the other guy desides to be. I come action-packed with events, a podcast, and a strange addiction to a blue birdsite." />
 </svelte:head>
 
 <script>
@@ -10,28 +10,20 @@
 	import Header from '../comps/Header.svelte';
 	import Article from '../comps/Article.svelte';
 	import Cards from '../comps/Cards.svelte';
-	let header = {
-		title: 'Welcome to Responsive!',
-		button: {
-			href: 'https://discord.gg/semsxbP',
-			title: 'Join Us',
-			icon: '/social/discord.png'
-		}
-	};
 	let cards = [
 		{
 			title: 'Discord',
-			description: 'Our server is the main hub of our community with an active userbase of more than 100 members. We all are here if you need help and are always willing to give feedback! Feel free to pop in anytime and say hello!',
-			href: 'https://discord.gg/semsxbP',
+			description: 'Our server is the main hub of our community. We all are here if you need help and are always willing to give feedback! Feel free to pop in anytime and say hello!',
+			href: '/discord',
 			button: {
-				href: 'https://discord.gg/semsxbP',
+				href: '/discord',
 				title: 'Join',
 				inverted: true
 			}
 		},
 		{
 			title: 'Events',
-			description: 'We host a variety of weekly events such as hackathons, code jams, and even open discussions! All of these events are open to everyone, even late-arrivals! Most of these events last for about a week, and the results come out 1-3 days after.',
+			description: 'We host a variety of events such as hackathons, monthly themes, and open discussions! All events are open to any language or skillset!',
 			href: '/events',
 			button: {
 				href: '/events',
@@ -40,8 +32,8 @@
 			}
 		},
 		{
-			title: 'Podcasts & Streams',
-			description: 'We host a stream at least once per week and release a podcast episode twice per week. Learn more about the podcast <a href="/podcast">here</a> and check out our <a href="https://twitch.tv/vandesm14">Twitch</a> for our livestreams.',
+			title: 'Podcast',
+			description: 'Want to listen to two guys talk about tech... and stuff? Whether you like tech updates or in-depth discussions, sit down and listen to an episode or two!',
 			href: '/podcast',
 			button: {
 				href: '/podcast',
@@ -54,15 +46,13 @@
 
 <Navbar />
 
-<Header {...header}>
-	Responsive is a community which is related to development and technology. Whether you need help, are looking to share a project, or are just looking to be in an active community, we are your north star!
-</Header>
-<Article title="About Us">
-	Welcome to Responsive, a <a rel="external" href="https://discord.gg/semsxbP" target="_blank">community</a> based on tech and development of all kinds! Whether you want to share your ideas, assist others in their coding endeavors, or just want to mingle amongst the masses, this is the place for you! At Responsive, we host many <a href="/events">events</a> that range in variety: from <a href="https://twitch.tv/vandesm14" target="_blank">livestreams</a> and <a href="/podcast">podcasts</a> to code jams and hackathons. Get comfy, settle in, and begin your journey with the Responsive community!
+<Header></Header>
+<Article title="Hi there!">
+	I'm Responsive, a self-aware tech-related community run by a bird and a whatever the other guy desides to be. I come action-packed with events, a podcast, and a strange addiction to a blue birdsite. I also enjoy tech pop-tarts, although only in moderation, of course. Here are some nicely animated cards to show you around:
 </Article>
-<Article title="Our Story">
-	The Responsive community started out as just a simple <a rel="external" href="https://twitch.tv/vandesm14" target="_blank">Twitch channel</a>. Leon (Leonski) and I (TheDevBird) created a <a href="https://discord.gg/semsxbP" target="_blank">Discord server</a> to help grow my Twitch community. At that point, all I streamed was web development projects. Since then, the community has grown at an exponential scale. Now, we're not only hosting streams, but regular conversation, <a href="/events">events</a>, and have even started a <a href="/podcast">podcast series</a>. For the future of Responsive, Leon and I plan on growing much larger than this, with our own help station, multiple events running in parallel, and even a whole stream-team & podcast group!
-</Article>
+<!-- <Article title="Our Story">
+	The Responsive community started out as just a simple <a rel="external" href="https://twitch.tv/vandesm14" target="_blank">Twitch channel</a>. Leon (Leonski) and I (TheDevBird) created a <a href="/discord">Discord server</a> to help grow my Twitch community. At that point, all I streamed was web development projects. Since then, the community has grown at an exponential scale. Now, we're not only hosting streams, but regular conversation, <a href="/events">events</a>, and have even started a <a href="/podcast">podcast series</a>. For the future of Responsive, Leon and I plan on growing much larger than this, with our own help station, multiple events running in parallel, and even a whole stream-team & podcast group!
+</Article> -->
 <Cards {cards}/>
 
 <Footer />
