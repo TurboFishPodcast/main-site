@@ -6,6 +6,7 @@
 	dayjs.extend(localizedFormat);
 
 	export let files;
+	files = files.filter(el => new Date() >= new Date(el.date)); // post date is less than or equal to current date
 </script>
 
 <div class="posts">
