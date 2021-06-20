@@ -22,7 +22,7 @@
 	import Article from "../../comps/Article.svelte";
 
 	import dayjs from 'dayjs';
-	import localizedFormat from 'dayjs/plugin/localizedFormat';
+	import localizedFormat from 'dayjs/plugin/localizedFormat.js';
 	dayjs.extend(localizedFormat);
 
 	import * as cm from 'commonmark';
