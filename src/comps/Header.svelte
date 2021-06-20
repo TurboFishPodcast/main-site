@@ -21,7 +21,7 @@
 <style>
 	@font-face {
     font-family: 'Montserrat';
-    src: url('Montserrat-Bold.ttf') format('truetype');
+    src: url('/Montserrat-Bold.ttf') format('truetype');
 	}
 
 	div.header {
