@@ -30,7 +30,7 @@ const readdir = promisify(fs.readdir);
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
-console.log('build started\n');
+console.log('build started');
 
 (async () => {
 	const path = 'src/database/posts';
@@ -57,7 +57,6 @@ console.log('build started\n');
 			data.sort((a, b) => {new Date(a.date) - new Date(b.date)});
 			data = data.filter(el => !el.draft);
 			
-			console.log('');
 			console.log('writing to database');
 			await writeFile('src/posts.json', JSON.stringify(data));
 			console.log('database built');
