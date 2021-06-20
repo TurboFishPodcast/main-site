@@ -10,9 +10,9 @@ const config = {
 	kit: {
 		adapter: adapter({
 			pages: 'docs',
-			// prerender: {
-			// 	enabled: true
-			// }
+			prerender: {
+				enabled: true
+			}
 		})
 	}
 };
@@ -30,7 +30,7 @@ const readdir = promisify(fs.readdir);
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
-console.log('build started');
+console.log('building database');
 
 (async () => {
 	const path = 'src/database/posts';
@@ -56,10 +56,10 @@ console.log('build started');
 			console.log('sorting list');
 			data.sort((a, b) => {new Date(a.date) - new Date(b.date)});
 			data = data.filter(el => !el.draft);
-			
+
 			console.log('writing to database');
 			await writeFile('src/posts.json', JSON.stringify(data));
-			console.log('database built');
+			console.log('database built\n');
 		}
 	};
 

@@ -1,6 +1,8 @@
 <script>
 	import Head from '../comps/Head.svelte';
 	import Header from '../comps/Header.svelte';
+	import Article from '../comps/Article.svelte';
+	import Button from '../comps/Button.svelte';
 
 	let header = {
 		title: 'Discord',
@@ -18,7 +20,13 @@
 />
 <meta http-equiv="refresh" content="2; url = https://discord.gg/UKQUkhjxRT" />
 
-<Header {...header}>
-	Redirecting you to the server...<br /><br />
-	<i>If this doesn't happen automatically just click the button below</i>
+<Header>
+	Redirecting...
 </Header>
+
+<Article>
+	<i>If this doesn't happen automatically just click the button below<br><br></i>
+	<center>
+		<Button icon="/social/discord.png" href="https://discord.gg/UKQUkhjxRT">Redirect</Button>
+	</center>
+</Article>
