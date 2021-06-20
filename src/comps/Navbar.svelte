@@ -13,6 +13,7 @@
 	<Button href="/events">Events</Button>
 	<Button href="/blog">Blog</Button>
 	<Button href="/discord">Discord</Button>
+	<Button href="https://fridgesales.info" rel="external" target="_blank">Fridge</Button>
 </div>
 
 <style>
