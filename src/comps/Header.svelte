@@ -26,7 +26,7 @@
 		margin: 0 auto;
 		font-size: 4rem;
 		font-family: Montserrat, sans-serif;
-		width: 82vw;
+		width: 100%;
 		padding-top: 9vh;
 		min-height: 30vh;
 		margin-bottom: 1rem;
@@ -36,7 +36,9 @@
 	div.text {
 		position: absolute;
 		bottom: 1rem;
-		left: 1rem;
+		left: calc(1rem + 9vw);
+		width: 82vw;
+		margin: 0 auto;
 	}
 
 	@media (max-width: 400px) {

@@ -9,6 +9,9 @@
   import Footer from "../../comps/Footer.svelte";
   import Header from "../../comps/Header.svelte";
 	import Article from "../../comps/Article.svelte";
+	import Posts from "../../comps/Posts.svelte";
+
+	import files from '../../posts.json';
 
 	export let article;
 </script>
@@ -16,8 +19,8 @@
 <Navbar />
 
 <Header>Blog</Header>
-<Article>
-	Welcome to the blog!
+<Article title="Recent Articles">
+	<Posts {files} />
 </Article>
 
 <Footer />
