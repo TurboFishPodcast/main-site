@@ -64,8 +64,8 @@
   background-color: #373737;
 }
 :global(#post p) {
-  margin-top: 0.7rem;
-  margin-bottom: 0.7rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 :global(#post img) {
   max-width: 50%;
