@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<meta name="theme-color" content="#333333" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core@0.1.1/dist/animxyz.min.css" />
+		<link rel="stylesheet" href="/global.css" />
+	
+		<link rel="icon" type="image/png" href="/old-fav.png?v=2" />
+		
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-15ca7daa.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-1d4a7f7a.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-025221d6.js">
+		<link rel="modulepreload" href="/./_app/chunks/Footer-723abdd7.js">
+		<link rel="modulepreload" href="/./_app/chunks/Button-0ca1a037.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/[slug].svelte-e352bf9a.js">
+		<link rel="modulepreload" href="/./_app/chunks/posts-b214f060.js">
+		<link rel="modulepreload" href="/./_app/chunks/Article-e83a1094.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/Footer-30a0d214.css">
+		<link rel="stylesheet" href="/./_app/assets/Button-7cf95307.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/blog/[slug].svelte-5beab242.css">
+		<link rel="stylesheet" href="/./_app/assets/Article-9626d0c8.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-15ca7daa.js";
+			start({
+				target: document.body,
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-025221d6.js"),
+						import("/./_app/pages/blog/[slug].svelte-e352bf9a.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/blog/first-post",
+						query: new URLSearchParams(""),
+						params: {"slug":"first-post"}
+					}
+				}
+			});
+		</script>
+	</head>
+
+	<body>
+		
+
+
+
+
+<div class="navbar  svelte-5d9vly" id="navbar"><div class="navbar-background svelte-5d9vly"></div>
+	
+	<div class="buttons svelte-5d9vly"><a href="/" target="" class=" svelte-p8iw" style="" data-text="" rel="">Home</a>
+<a href="/podcast" target="" class=" svelte-p8iw" style="" data-text="" rel="">Podcast</a>
+<a href="/events" target="" class=" svelte-p8iw" style="" data-text="" rel="">Events</a>
+<a href="/blog" target="" class=" svelte-p8iw" style="" data-text="" rel="">Blog</a>
+<a href="/discord" target="" class=" svelte-p8iw" style="" data-text="" rel="">Discord</a>
+<a href="https://fridgesales.info" target="_blank" class=" svelte-p8iw" style="" data-text="" rel="external">Fridge</a></div>
+</div>
+
+<meta name="author" content="Shane & Leon">
+<meta name="keywords" content="responsive, respdev, development, coding, community, discord, podcast">
+
+<title>Same Community, New Site | Responsive Blog</title>
+
+
+<meta name="title" content="Same Community, New Site | Responsive Blog">
+<meta name="description" content="The Responsive website? What? That exists?">
+<meta name="theme-color" content="#991133">
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://respdev.com">
+<meta property="og:title" content="Same Community, New Site | Responsive Blog">
+<meta property="og:description" content="The Responsive website? What? That exists?">
+<meta property="og:image" content="https://respdev.com/banner.png">
+
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://respdev.com">
+<meta property="twitter:title" content="Same Community, New Site | Responsive Blog">
+<meta property="twitter:description" content="The Responsive website? What? That exists?">
+<meta property="twitter:image" content="https://respdev.com/banner.png">
+
+
+
+<div class="header content svelte-1fa0vpc"><div class="text svelte-1fa0vpc">Same Community, New Site</div>
+</div>
+<div id="post"><div class="article false svelte-1faxmf1" xyz="false"><h1 class="svelte-1faxmf1"></h1>
+<p class="svelte-1faxmf1"><a href="/blog">&lt;- Back</a><br>
+<i>Posted: June 20, 2021 5:10 PM</i><br>
+<i>Written by: <a target="_blank" rel="external" href="https://twitter.com/vandesm14">Shane</a></i>
+<p>(warning, I really wanted to post this ASAP so there may be spelling and layout issues)</p>
+<h1>Thanks for the nine months!</h1>
+<p>It's been really fun hosting Responsive for over half a year (9 months). Both Leon and I have learned a ton about managing a community and working on events such as the code jams and the podcast. So before I go on to talk about other things, we'd both like to say thanks for sticking with us for the 9 months we've been around for!</p>
+<h1>Our Website</h1>
+<p>Our website's purpose is supposed to be the main hub for important links, event details, and general brand identity. The Issue was, some people in the Discord server didn't even know our site existed! How much for a main hub huh? I think the main reason for this was due to poor site design (both UI/UX and code-wise). For example, to update an event on the events page, I would need to convert the Discord message to HTML using an external site, input the due date in UTC in <strong>two places</strong>, make sure everything was rendered correctly, go back and fix everything (this is what happens when you don't have an internal converter), then push the changes to GitHub. It was a headache. And don't get me started about the newsletter!</p>
+<h2>The &quot;Newsletter&quot;</h2>
+<blockquote>
+<p>&quot;it was actually just a mishmash of random articles from other people, a few updates, and a heap of other (sometimes outdated) event details&quot;</p>
+</blockquote>
+<p>Let's talk about the newsletter: <strong>It was a bad idea!</strong> Not only did I set the goal of posting every week, but the actual layout of the newsletter was horrible. Instead of being &quot;about the community&quot; as I had claimed, it was actually just a mishmash of random articles from other people, a few updates, and a heap of other (sometimes outdated) event details. Another issue on top of that was that because of the code structure, we had to name files with a specific syntax to get them to show up. Unlike we do now, we did not have the power to have metadata in YAML.</p>
+<p>You heard that right, our blog posts (yes, <strong>BLOG</strong> posts) have support for quite a few metadata tricks in YAML. For example, the date and author info at the top of the page, that's all YAML. No need for manual formatting, just YAML-it and go!</p>
+<p><img src="/images/peek-at-a-post.png" alt="" /></p>
+<p>See how much easier that is? (you also get a peek into a probably outdated version of this post as well)</p>
+<p>Our thoughts forward with the new Blog is to post somewhere around one to two times per month, in place of any podcasts we miss (probably many), and to allow a more broader range of ideas and thoughts to come from the posts, instead of crappy cut-short ideas. Also, <strong>we're more than happy to put your own article on our site, just ask!</strong> <em>(you can find our contact info in the footer)</em></p>
+<h1>Other Stuff</h1>
+<h2>Upcoming Events</h2>
+<p>Don't worry, it's not going to be another coding challenge. We've taken notice of what the community was saying and doing and have decided that doing code jams <strong>every single time</strong> is not the best idea. A for-sure upcoming event is a code golf tournament sponsored by Verselet! The date for that is still TBD, we can only say that it'll happen sometime in July. Alright, the news you've been waiting for: <strong>Responsive will now have monthly themes!</strong></p>
+<p>What does this mean? Well, instead of having coding challenges, which aren't ideal, we plan on having a theme each month (or every 3 weeks for frequency) that will give people a few ideas to get working on a project. Instead of being competitive, everyone can work in groups, get inspiration from others, or even work on older themes. The great part about monthly themes is that they will spark ideas for other related events, podcasts, blog posts, and much more! If you have any feedback, let us know in the <a href="/discord">Discord server</a>!</p>
+<h1>Bye for now!</h1>
+<p>Even though I'd love to stay and talk more, I want to keep this first post short, it boosts engagement. Thank you all for sticking with us as we learn how to run a community!</p>
+<h2>PS</h2>
+<p>The first ever monthly theme will start July 2021! Stay tuned for a possible blog post, Discord announcement, and maybe even an <strong>announcement on the site!</strong></p>
+<p>Oh, and we're planning on celebrating our birthday sometime in August (even though our true birthday is September 10th)!</p>
+</p>
+</div>
+</div>
+
+<footer class="footer svelte-vjsgq" id="footer"><div class="svelte-vjsgq"><a target="_blank" rel="external" href="https://anchor.fm/responsive" class="svelte-vjsgq"><img src="/social/anchor.png" alt="" class="svelte-vjsgq"></a>
+<a target="_blank" href="/discord" class="svelte-vjsgq"><img src="/social/discord.png" alt="" class="svelte-vjsgq"></a>
+<a target="_blank" rel="external" href="mailto:responsivedev@pm.me" class="svelte-vjsgq"><img src="/social/email.png" alt="" class="svelte-vjsgq"></a>
+<a target="_blank" rel="external" href="https://github.com/ResponsiveDev" class="svelte-vjsgq"><img src="/social/github.png" alt="" style="background-color: white" class="svelte-vjsgq"></a>
+<a target="_blank" rel="external" href="https://twitch.tv/vandesm14" class="svelte-vjsgq"><img src="/social/twitch.png" alt="" class="svelte-vjsgq"></a>
+<a target="_blank" rel="external" href="https://twitter.com/RespDev" class="svelte-vjsgq"><img src="/social/twitter.png" alt="" class="svelte-vjsgq"></a></div>
+	<p class="svelte-vjsgq">© Copyright 2021 Responsive</p>
+</footer>
+
+
+
+	
+
+	</body>
+</html>
