@@ -1,7 +1,7 @@
 <footer class="footer" id="footer">
 	<div>
 		<a target="_blank" rel="external" href="https://anchor.fm/responsive"><img src="/social/anchor.png" alt=""></a>
-		<a target="_blank" rel="external" href="https://discord.gg/semsxbP"><img src="/social/discord.png" alt=""></a>
+		<a target="_blank" href="/discord"><img src="/social/discord.png" alt=""></a>
 		<a target="_blank" rel="external" href="mailto:responsivedev@pm.me"><img src="/social/email.png" alt=""></a>
 		<a target="_blank" rel="external" href="https://github.com/ResponsiveDev"><img src="/social/github.png" alt="" style="background-color: white"></a>
 		<a target="_blank" rel="external" href="https://twitch.tv/vandesm14"><img src="/social/twitch.png" alt=""></a>

@@ -36,7 +36,7 @@
 	div.text {
 		position: absolute;
 		bottom: 1rem;
-		left: calc(1rem + 9vw);
+		left: calc(10vw);
 		width: 82vw;
 		margin: 0 auto;
 	}

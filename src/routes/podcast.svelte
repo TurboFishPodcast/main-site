@@ -1,18 +1,11 @@
-<svelte:head>
-	<title>Responsive - Podcast</title>
-	<Head title="Responsive - Podcast" description="Two guys talk with the community about all things tech; from frameworks to tech pop-tarts, we've got you covered." />
-</svelte:head>
-
 <script>
 	import Head from "../comps/Head.svelte";
-	import Navbar from '../comps/Navbar.svelte';
-  import Footer from "../comps/Footer.svelte";
 	import Header from '../comps/Header.svelte';
 	import Article from '../comps/Article.svelte';
 	import Button from '../comps/Button.svelte';
 </script>
 
-<Navbar />
+<Head title="Responsive | Podcast" description="Two guys talk with the community about all things tech; from frameworks to tech pop-tarts, we've got you covered." />
 
 <Header>The Responsive Podcast</Header>
 <Article title="Our Podcast">
@@ -24,6 +17,3 @@
 		Take a Listen
 	</Button>
 </center>
-
-
-<Footer />

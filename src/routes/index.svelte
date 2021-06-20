@@ -1,14 +1,5 @@
-<svelte:head>
-  <title>Responsive - Home</title>
-	<Head title="Responsive" description="I'm Responsive, a self-aware tech-related community run by a bird and a whatever the other guy desides to be. I come action-packed with events, a podcast, and a strange addiction to a blue birdsite." />
-</svelte:head>
-
 <script>
-	import db from '$lib/database';
-
 	import Head from "../comps/Head.svelte";
-	import Navbar from '../comps/Navbar.svelte';
-  import Footer from "../comps/Footer.svelte";
 	import Header from '../comps/Header.svelte';
 	import Article from '../comps/Article.svelte';
 	import Cards from '../comps/Cards.svelte';
@@ -46,7 +37,7 @@
 	];
 </script>
 
-<Navbar />
+<Head title="Responsive" description="I'm Responsive, a self-aware tech-related community run by a bird and a whatever the other guy desides to be. I come action-packed with events, a podcast, and a strange addiction to a blue birdsite." />
 
 <Header></Header>
 <Article title="Hi there!">
@@ -56,5 +47,3 @@
 	The Responsive community started out as just a simple <a rel="external" href="https://twitch.tv/vandesm14" target="_blank">Twitch channel</a>. Leon (Leonski) and I (TheDevBird) created a <a href="/discord">Discord server</a> to help grow my Twitch community. At that point, all I streamed was web development projects. Since then, the community has grown at an exponential scale. Now, we're not only hosting streams, but regular conversation, <a href="/events">events</a>, and have even started a <a href="/podcast">podcast series</a>. For the future of Responsive, Leon and I plan on growing much larger than this, with our own help station, multiple events running in parallel, and even a whole stream-team & podcast group!
 </Article> -->
 <Cards {cards}/>
-
-<Footer />

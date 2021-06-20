@@ -1,0 +1,9 @@
+---
+title: Post Title                    # String format
+description: Mainly for meta tags    # Also used on cards
+date: 2021-06-19                     # Supports UTC date format
+slug: new-article-name               # Must be URI compatible; default: filename
+author: Shane                        # default: Responsive
+link: https://twitter.com/RespDev    # Link for author text; default: https://twitter.com/RespDev
+draft: true                          # default: false
+---

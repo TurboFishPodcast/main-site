@@ -1,6 +1,5 @@
 <svelte:head>
-	<title>Responsive - Blog</title>
-	<Head title="Responsive - Blog" description="We host a variety of events such as hackathons, monthly themes, and open discussions! All events are open to any language or skillset!" />
+	<Head title="Responsive | Error" description="If you're seeing this, someone decided to share an error page" />
 </svelte:head>
 
 <script context="module">

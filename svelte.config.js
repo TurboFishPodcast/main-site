@@ -9,17 +9,20 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			pages: 'docs'
+			pages: 'docs',
+			// prerender: {
+			// 	enabled: true
+			// }
 		})
 	}
 };
 
 export default config;
 
-/* DB BUILD SCRIPT */
+
+/* ---------- DB BUILD SCRIPT ---------- */
 import {promisify} from 'util';
 import * as fs from 'fs';
-import bson from 'bson';
 import metaParser from 'markdown-yaml-metadata-parser';
 
 
@@ -31,9 +34,9 @@ console.log('build started\n');
 
 (async () => {
 	const path = 'src/database/posts';
-	const files = await readdir(path);
+	const files = await (await readdir(path)).filter(el => !el.startsWith('.'));
 	const count = files.length;
-	const data = [];
+	let data = [];
 
 	let progress = 0;
 
@@ -42,7 +45,7 @@ console.log('build started\n');
 		const {metadata, content} = metaParser(source);
 		metadata.path = file;
 		metadata.content = content;
-		metadata.slug = file.replace(/.md$/, '');
+		metadata.slug = metadata.slug ?? file.replace(/.md$/, '');
 		
 		data.push(metadata);
 		progress++;
@@ -51,7 +54,8 @@ console.log('build started\n');
 
 		if (progress === count) {
 			console.log('sorting list');
-			data.sort((a, b) => {b.date - a.date});
+			data.sort((a, b) => {new Date(a.date) - new Date(b.date)});
+			data = data.filter(el => !el.draft);
 			
 			console.log('');
 			console.log('writing to database');

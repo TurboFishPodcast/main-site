@@ -1,12 +1,5 @@
-<svelte:head>
-	<title>Responsive - Events</title>
-	<Head title="Responsive - Events" description="We host a variety of events such as hackathons, monthly themes, and open discussions! All events are open to any language or skillset!" />
-</svelte:head>
-
 <script>
   import Head from "../comps/Head.svelte";
-  import Navbar from "../comps/Navbar.svelte";
-  import Footer from "../comps/Footer.svelte";
   import Header from "../comps/Header.svelte";
 	import Article from "../comps/Article.svelte";
 	import Button from '../comps/Button.svelte';
@@ -19,7 +12,7 @@
 	}, 10000);
 </script>
 
-<Navbar />
+<Head title="Responsive | Events" description="We host a variety of events such as hackathons, monthly themes, and open discussions! All events are open to any language or skillset!" />
 
 <Header>Events</Header>
 <Article title="About">
@@ -35,5 +28,3 @@
 		Join In
 	</Button>
 </center>
-
-<Footer />

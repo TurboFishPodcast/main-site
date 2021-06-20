@@ -1,4 +1,10 @@
 <script>
+	import dayjs from 'dayjs';
+	import relativeTime from 'dayjs/plugin/relativeTime';
+	import localizedFormat from 'dayjs/plugin/localizedFormat';
+	dayjs.extend(relativeTime);
+	dayjs.extend(localizedFormat);
+
 	export let files;
 </script>
 
@@ -6,7 +12,8 @@
 	{#each files as file}
 		<a class="post" href="/blog/{file.slug}">
 			<h2 class="title">{file.title ?? file.slug}</h2>
-			<p class="date">{file.date || ''}</p>
+			<p>By <a target="_blank" rel="external" href={file.link ?? 'https://twitter.com/RespDev'}>{file.author ?? 'Responsive'}</a> (<i title={dayjs(file.date).format('LLL') ?? 'Unknown Date'}>{dayjs(file.date).fromNow() ?? 'No Date'}</i>)</p>
+			<p>"{file.description ?? ''}"</p>
 		</a>
 	{/each}
 </div>
@@ -18,6 +25,7 @@
 		justify-content: space-around;
 		font-size: 1.2rem;
 		width: max-content;
+		max-width: 100%;
 	}
 
 	.post {
@@ -42,9 +50,5 @@
 	h2 {
 		margin: 0;
 		font-size: 1.6rem;
-	}
-
-	.date {
-		color: var(--secondary-text);
 	}
 </style>
