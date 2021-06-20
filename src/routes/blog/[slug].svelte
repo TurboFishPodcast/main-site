@@ -4,12 +4,11 @@
 </svelte:head>
 
 <script context="module">
-	import db from '$lib/database';
+	import db from '../../posts.json';
 
 	export async function load({page, fetch}) {
 		const params = page.params;
-		const res = await db.get(fetch, params.slug);
-		const article = await res.text();
+		const article = db.find(el => el.slug === params.slug);
 
 		if (article) {
 			return {
@@ -28,14 +27,14 @@
   import Header from "../../comps/Header.svelte";
 	import Article from "../../comps/Article.svelte";
 
-	export let article;
+	export let article = {};
 </script>
 
 <Navbar />
 
-<Header>Blog</Header>
+<Header>{article.title ?? article.slug}</Header>
 <Article>
-	{article}
+	{article.content}
 </Article>
 
 <Footer />

@@ -4,8 +4,8 @@
 
 <div class="posts">
 	{#each files as file}
-		<a class="post" href="/blog/{file.path.slice(0, -3)}">
-			<h2 class="title">{file.title ?? file.path}</h2>
+		<a class="post" href="/blog/{file.slug}">
+			<h2 class="title">{file.title ?? file.slug}</h2>
 			<p class="date">{file.date || ''}</p>
 		</a>
 	{/each}
@@ -30,13 +30,13 @@
 		flex: 1;
 		border-radius: 10px;
 		padding: 0.6rem;
-		margin: 1rem 0;
+		margin: 0.6rem 0;
 		text-decoration: none;
 		transition: 150ms ease-out;
 	}
 	.post:hover {
 		box-shadow: 0 4px 20px #00000044;
-		transform: scale(1.1);
+		transform: scale(1.04);
 	}
 
 	h2 {

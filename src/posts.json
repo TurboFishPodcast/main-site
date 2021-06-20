@@ -1,1 +1,1 @@
-[{"title":"welcome to our second blog post!","date":"2021-6-19","path":"new-article.md"},{"path":"test-article.md"}]
+[{"title":"welcome to our second blog post!","date":"2021-6-19","path":"new-article.md","content":"end of article","slug":"new-article"},{"path":"test-article.md","content":"# Hello!\r\nThis is our first blog post!","slug":"test-article"}]
