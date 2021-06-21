@@ -12,14 +12,14 @@
 
 		
 
-		<link rel="modulepreload" href="/./_app/start-7a806536.js">
-		<link rel="modulepreload" href="/./_app/chunks/vendor-1d4a7f7a.js">
-		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-a4b489e6.js">
-		<link rel="modulepreload" href="/./_app/chunks/Footer-1951ee21.js">
-		<link rel="modulepreload" href="/./_app/chunks/Button-0ca1a037.js">
-		<link rel="modulepreload" href="/./_app/pages/blog/[slug].svelte-1c09fbcf.js">
-		<link rel="modulepreload" href="/./_app/chunks/posts-b214f060.js">
-		<link rel="modulepreload" href="/./_app/chunks/Article-07445f73.js">
+		<link rel="modulepreload" href="/./_app/start-6c939df7.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-8587846e.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-f85b776b.js">
+		<link rel="modulepreload" href="/./_app/chunks/Footer-127fb323.js">
+		<link rel="modulepreload" href="/./_app/chunks/Button-655b436c.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/[slug].svelte-1b1d4a8f.js">
+		<link rel="modulepreload" href="/./_app/chunks/posts-c455c653.js">
+		<link rel="modulepreload" href="/./_app/chunks/Article-4fb9b322.js">
 		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
 		<link rel="stylesheet" href="/./_app/assets/Footer-0c84575f.css">
 		<link rel="stylesheet" href="/./_app/assets/Button-7cf95307.css">
@@ -27,7 +27,7 @@
 		<link rel="stylesheet" href="/./_app/assets/Article-4b88ecdf.css">
 
 		<script type="module">
-			import { start } from "/./_app/start-7a806536.js";
+			import { start } from "/./_app/start-6c939df7.js";
 			start({
 				target: document.body,
 				paths: {"base":"","assets":"/."},
@@ -40,8 +40,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/./_app/pages/__layout.svelte-a4b489e6.js"),
-						import("/./_app/pages/blog/[slug].svelte-1c09fbcf.js")
+						import("/./_app/pages/__layout.svelte-f85b776b.js"),
+						import("/./_app/pages/blog/[slug].svelte-1b1d4a8f.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -118,7 +118,7 @@
 
 
 
-	
+	<script type="svelte-data" url="/db/posts/first-post.md">{"status":200,"statusText":"","headers":{"content-type":"text/markdown"},"body":"---\ntitle: Same Community, New Site\ndescription: The Responsive website? What? That exists?\ndate: 2021-06-20T13:10:00-4\nauthor: Shane\nlink: https:\u002F\u002Ftwitter.com\u002Fvandesm14\n---\n(warning, I really wanted to post this ASAP so there may be spelling and layout issues)\n\n# Thanks for the nine months!\n\nIt's been really fun hosting Responsive for over half a year (9 months). Both Leon and I have learned a ton about managing a community and working on events such as the code jams and the podcast. So before I go on to talk about other things, we'd both like to say thanks for sticking with us for the 9 months we've been around for!\n\n# Our Website\n\nOur website's purpose is supposed to be the main hub for important links, event details, and general brand identity. The Issue was, some people in the Discord server didn't even know our site existed! How much for a main hub huh? I think the main reason for this was due to poor site design (both UI\u002FUX and code-wise). For example, to update an event on the events page, I would need to convert the Discord message to HTML using an external site, input the due date in UTC in **two places**, make sure everything was rendered correctly, go back and fix everything (this is what happens when you don't have an internal converter), then push the changes to GitHub. It was a headache. And don't get me started about the newsletter!\n\n## The \"Newsletter\"\n\n\u003E \"it was actually just a mishmash of random articles from other people, a few updates, and a heap of other (sometimes outdated) event details\"\n\nLet's talk about the newsletter: **It was a bad idea!** Not only did I set the goal of posting every week, but the actual layout of the newsletter was horrible. Instead of being \"about the community\" as I had claimed, it was actually just a mishmash of random articles from other people, a few updates, and a heap of other (sometimes outdated) event details. Another issue on top of that was that because of the code structure, we had to name files with a specific syntax to get them to show up. Unlike we do now, we did not have the power to have metadata in YAML.\n\nYou heard that right, our blog posts (yes, **BLOG** posts) have support for quite a few metadata tricks in YAML. For example, the date and author info at the top of the page, that's all YAML. No need for manual formatting, just YAML-it and go!\n\n![](\u002Fimages\u002Fpeek-at-a-post.png)\n\nSee how much easier that is? (you also get a peek into a probably outdated version of this post as well)\n\nOur thoughts forward with the new Blog is to post somewhere around one to two times per month, in place of any podcasts we miss (probably many), and to allow a more broader range of ideas and thoughts to come from the posts, instead of crappy cut-short ideas. Also, **we're more than happy to put your own article on our site, just ask!** *(you can find our contact info in the footer)*\n\n# Other Stuff\n\n## Upcoming Events\n\nDon't worry, it's not going to be another coding challenge. We've taken notice of what the community was saying and doing and have decided that doing code jams **every single time** is not the best idea. A for-sure upcoming event is a code golf tournament sponsored by Verselet! The date for that is still TBD, we can only say that it'll happen sometime in July. Alright, the news you've been waiting for: **Responsive will now have monthly themes!**\n\nWhat does this mean? Well, instead of having coding challenges, which aren't ideal, we plan on having a theme each month (or every 3 weeks for frequency) that will give people a few ideas to get working on a project. Instead of being competitive, everyone can work in groups, get inspiration from others, or even work on older themes. The great part about monthly themes is that they will spark ideas for other related events, podcasts, blog posts, and much more! If you have any feedback, let us know in the [Discord server](\u002Fdiscord)!\n\n# Bye for now!\n\nEven though I'd love to stay and talk more, I want to keep this first post short, it boosts engagement. Thank you all for sticking with us as we learn how to run a community!\n\n## PS\n\nThe first ever monthly theme will start July 2021! Stay tuned for a possible blog post, Discord announcement, and maybe even an **announcement on the site!**\n\nOh, and we're planning on celebrating our birthday sometime in August (even though our true birthday is September 10th)!"}</script>
 
 	</body>
 </html>
