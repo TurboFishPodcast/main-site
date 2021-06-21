@@ -2,7 +2,9 @@ import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
 
 import dbuild_db from './build.db.js';
-await dbuild_db();
+
+const dev = process.argv.slice(2)[0] === 'dev';
+await dbuild_db(dev);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

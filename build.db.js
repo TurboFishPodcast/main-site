@@ -6,7 +6,7 @@ const readdir = promisify(fs.readdir);
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
-export default async () => {
+export default async (dev) => {
 	console.log('building database');
 	const chunks = await readdir('static/db'); // list of directories under "static/db"
 	let count = 0;
@@ -31,7 +31,7 @@ export default async () => {
 			if (progress === files.length) {
 				console.log('sorting list');
 				data.sort((a, b) => new Date(b.date) - new Date(a.date));
-				data = data.filter(el => !el.draft);
+				data = data.filter(el => !el.draft || dev);
 	
 				console.log(`writing to chunk "${chunk}"`);
 				await writeFile(join('src/routes/db', chunk + '.json'), JSON.stringify(data));
