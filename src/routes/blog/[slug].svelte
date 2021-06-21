@@ -1,7 +1,7 @@
 <script context="module">
-	import db from '../../posts.json';
+	import db from '../db/posts.json';
 
-	export async function load({page}) {
+	export async function load({page, fetch}) {
 		const params = page.params;
 		const article = db.find(el => el.slug === params.slug);
 
@@ -9,7 +9,7 @@
 			return {
 				props: {
 					article,
-					db
+					content: await (await fetch(`/db/posts/${article.slug}.md`)).text()
 				}
 			};
 		}
@@ -20,6 +20,7 @@
   import Head from "../../comps/Head.svelte";
   import Header from "../../comps/Header.svelte";
 	import Article from "../../comps/Article.svelte";
+	import metaParser from 'markdown-yaml-metadata-parser';
 
 	import dayjs from 'dayjs';
 	import localizedFormat from 'dayjs/plugin/localizedFormat.js';
@@ -30,7 +31,7 @@
 	const writer = new cm.HtmlRenderer({softbreak: '<br>'});
 	const parse = text => writer.render(reader.parse(text));
 
-	export let article;
+	export let article, content;
 </script>
 
 <Head	title="{article.title ?? article.slug} | Responsive Blog"	description={article.description ?? 'The Responsive Blog, who knew this existed?'} />
@@ -41,7 +42,7 @@
 		<a href="/blog">&lt;- Back</a><br>
 		<i>Posted: {dayjs(article.date).format('LLL')}</i><br>
 		<i>Written by: <a target="_blank" rel="external" href={article.link ?? 'https://twitter.com/RespDev'}>{article.author ?? 'Responsive'}</a></i>
-		{@html article.content ? parse(article.content) : 'Error: Article is missing content'}
+		{@html metaParser(content).content ? parse(metaParser(content).content) : 'Error: Article is missing content'}
 	</Article>
 </div>
 

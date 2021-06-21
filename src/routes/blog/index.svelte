@@ -4,7 +4,7 @@
 	import Article from "../../comps/Article.svelte";
 	import Posts from "../../comps/Posts.svelte";
 
-	import files from '../../posts.json';
+	import files from '../db/posts.json';
 </script>
 
 <Head	title="Responsive | Blog"	description="The Responsive Blog, who knew this existed?" />

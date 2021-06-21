@@ -33,7 +33,7 @@ const writeFile = promisify(fs.writeFile);
 console.log('building database');
 
 (async () => {
-	const path = 'src/database/posts';
+	const path = 'static/db/posts';
 	const files = await (await readdir(path)).filter(el => !el.startsWith('.'));
 	const count = files.length;
 	let data = [];
@@ -44,8 +44,8 @@ console.log('building database');
 		const source = (await readFile(path + '/' + file)).toString();
 		const {metadata, content} = metaParser(source);
 		metadata.path = file;
-		metadata.content = content;
 		metadata.slug = metadata.slug ?? file.replace(/.md$/, '');
+		// metadata.content = content;
 		
 		data.push(metadata);
 		progress++;
@@ -58,8 +58,8 @@ console.log('building database');
 			data = data.filter(el => !el.draft);
 
 			console.log('writing to database');
-			await writeFile('src/posts.json', JSON.stringify(data));
-			console.log('database built\n');
+			await writeFile('src/routes/db/posts.json', JSON.stringify(data));
+			console.log('database build complete\n');
 		}
 	};
 
