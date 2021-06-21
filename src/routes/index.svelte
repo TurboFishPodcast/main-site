@@ -5,7 +5,7 @@
 	import Cards from '../comps/Cards.svelte';
 	import Posts from "../comps/Posts.svelte";
 
-	import files from './db/posts.json';
+	import files from './db/updates.json';
 	let cards = [
 		{
 			title: 'Discord',

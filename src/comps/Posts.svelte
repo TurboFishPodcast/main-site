@@ -31,7 +31,12 @@
 		{:else if type === 'updates'}
 			<a class="wrapper" href="{file.link}">
 				<div class="post">
-					<h2 class="title">{file.description ?? ''}</h2>
+					<h2 class="title">{file.title?? ''}</h2>
+					{#if file.title}
+						<p>{file.description ?? ''}</p>
+						{:else}
+						<p><b>{file.description ?? ''}</b></p>
+					{/if}
 					<p>
 						<i title={dayjs(file.date).format('LLL') ?? 'Unknown Date'}>{dayjs(file.date).fromNow() ?? 'No Date'}</i><br>
 						{#if file.link}
@@ -52,6 +57,7 @@
 		font-size: 1.2rem;
 		width: max-content;
 		max-width: 100%;
+		padding: 2vh;
 	}
 
 	.wrapper {
