@@ -61,6 +61,7 @@
 
 	img {
 		width: 3rem;
+		height: 3rem;
 		transition: 100ms ease-out;
 		display: block;
 		margin: 1rem 1rem;
