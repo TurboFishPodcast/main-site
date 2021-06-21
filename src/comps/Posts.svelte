@@ -7,6 +7,7 @@
 
 	export let files;
 	files = files.filter(el => new Date() >= new Date(el.date)); // post date is less than or equal to current date
+	files.sort((a, b) => new Date(b.date) - new Date(a.date));
 </script>
 
 <div class="posts">
@@ -33,15 +34,14 @@
 
 	a.wrapper {
 		text-decoration: none;
+		color: var(--primary-text);
 	}
 
 	.post {
 		min-width: 300px;
 		display: flex;
 		flex-direction: column;
-		justify-content: cneter;
-		background-color: var(--primary-text);
-		color: var(--secondary-color);
+		background-color: var(--tertiary-color);
 		flex: 1;
 		border-radius: 10px;
 		padding: 0.6rem;

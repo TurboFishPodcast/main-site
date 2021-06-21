@@ -49,8 +49,8 @@
 		flex-direction: column;
 		justify-content: cneter;
 		align-items: center;
-		background-color: var(--primary-text);
-		color: var(--secondary-color);
+		background-color: var(--tertiary-color);
+		color: var(--primary-text);
 		flex: 1;
 		border-radius: 10px;
 		padding: 1rem;

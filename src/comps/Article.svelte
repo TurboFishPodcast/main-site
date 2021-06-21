@@ -4,7 +4,7 @@
 	export let title = '',
 		description = '',
 		button = {},
-		animate = true;
+		animate = false;
 
 	let first = true;
 	let element;

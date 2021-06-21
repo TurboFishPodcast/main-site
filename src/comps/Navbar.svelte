@@ -22,7 +22,7 @@
 		<Button click={()=>expand=false} inverted={mobile} href="/events">Events</Button>
 		<Button click={()=>expand=false} inverted={mobile} href="/blog">Blog</Button>
 		<Button click={()=>expand=false} inverted={mobile} href="/discord">Discord</Button>
-		<Button click={()=>expand=false} inverted={mobile} href="https://fridgesales.info" external={true} blank={true}>Fridge</Button>
+		<!-- <Button click={()=>expand=false} inverted={mobile} href="https://fridgesales.info" external={true} blank={true}>Fridge</Button> -->
 	</div>
 </div>
 
