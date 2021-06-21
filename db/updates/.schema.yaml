@@ -1,0 +1,4 @@
+---
+use: db/posts/.schema.yaml    # use default schema from posts db
+link: /blog/{post}            # link for extra content
+---
