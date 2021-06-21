@@ -25,7 +25,6 @@ import {promisify} from 'util';
 import * as fs from 'fs';
 import metaParser from 'markdown-yaml-metadata-parser';
 
-
 const readdir = promisify(fs.readdir);
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
@@ -44,8 +43,7 @@ console.log('building database');
 		const source = (await readFile(path + '/' + file)).toString();
 		const {metadata, content} = metaParser(source);
 		metadata.path = file;
-		metadata.slug = metadata.slug ?? file.replace(/.md$/, '');
-		// metadata.content = content;
+		metadata.slug = encodeURIComponent(metadata.slug ?? file.replace(/.md$/, ''));
 		
 		data.push(metadata);
 		progress++;
@@ -54,7 +52,7 @@ console.log('building database');
 
 		if (progress === count) {
 			console.log('sorting list');
-			data.sort((a, b) => {new Date(a.date) - new Date(b.date)});
+			data.sort((a, b) => new Date(b.date) - new Date(a.date));
 			data = data.filter(el => !el.draft);
 
 			console.log('writing to database');
