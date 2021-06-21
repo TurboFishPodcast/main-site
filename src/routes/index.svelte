@@ -48,5 +48,5 @@
 </Article>
 <Cards {cards}/>
 <Article animate={false} title="Updates">
-	<Posts {files} />
+	<Posts {files} modal={true} />
 </Article>

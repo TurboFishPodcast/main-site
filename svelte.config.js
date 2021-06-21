@@ -29,9 +29,10 @@ const readdir = promisify(fs.readdir);
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
-console.log('building database');
 
 (async () => {
+	console.log('building database');
+
 	const path = 'static/db/posts';
 	const files = await (await readdir(path)).filter(el => !el.startsWith('.'));
 	const count = files.length;
@@ -41,7 +42,7 @@ console.log('building database');
 
 	const process = async (file) => {
 		const source = (await readFile(path + '/' + file)).toString();
-		const {metadata, content} = metaParser(source);
+		const {metadata} = metaParser(source);
 		metadata.path = file;
 		metadata.slug = encodeURIComponent(metadata.slug ?? file.replace(/.md$/, ''));
 		
