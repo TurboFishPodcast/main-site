@@ -3,4 +3,4 @@ node_modules
 /.svelte-kit
 /package
 /docs
-/src/routes/db
+/src/routes/db/*
