@@ -13,7 +13,7 @@
 </Article>
 
 <center>
-	<Button href="https://anchor.fm/responsive" icon="/social/anchor.png" external={true}>
+	<Button href="https://anchor.fm/responsive" icon="/social/anchor.svg" external={true}>
 		Take a Listen
 	</Button>
 </center>

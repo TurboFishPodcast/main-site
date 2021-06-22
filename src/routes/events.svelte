@@ -24,7 +24,7 @@
 </Article>
 
 <center>
-	<Button href="/discord" icon="/social/discord.png">
+	<Button href="/discord" icon="/social/discord.svg">
 		Join In
 	</Button>
 </center>

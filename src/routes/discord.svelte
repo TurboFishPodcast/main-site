@@ -9,7 +9,7 @@
 		button: {
 			href: 'https://discord.gg/UKQUkhjxRT',
 			title: 'Redirect',
-			icon: '/social/discord.png'
+			icon: '/social/discord.svg'
 		}
 	};
 </script>
@@ -27,6 +27,6 @@
 <Article>
 	<i>If this doesn't happen automatically just click the button below<br><br></i>
 	<center>
-		<Button icon="/social/discord.png" href="https://discord.gg/UKQUkhjxRT">Redirect</Button>
+		<Button icon="/social/discord.svg" href="https://discord.gg/UKQUkhjxRT">Redirect</Button>
 	</center>
 </Article>
