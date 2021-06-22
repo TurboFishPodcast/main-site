@@ -5,6 +5,8 @@ import metaParser from 'markdown-yaml-metadata-parser';
 const readdir = promisify(fs.readdir);
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
+const mkdir = promisify(fs.mkdir);
+const exists = promisify(fs.exists);
 
 export default async (dev) => {
 	console.log('building database');
@@ -34,6 +36,7 @@ export default async (dev) => {
 				data = data.filter(el => !el.draft || dev);
 	
 				console.log(`writing to chunk "${chunk}"`);
+				if (!(await exists('src/routes/db'))) await mkdir('src/routes/db');
 				await writeFile(join('src/routes/db', chunk + '.json'), JSON.stringify(data));
 			}
 			if (progress === files.length && count === chunks.length) console.log('database build complete\n');
