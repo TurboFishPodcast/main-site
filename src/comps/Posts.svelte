@@ -18,7 +18,7 @@
 	};
 </script>
 
-<div class="posts">
+<div class="posts {type}">
 	{#each files as file}
 		{#if type === 'blog'}
 			<a class="wrapper" href="/blog/{file.slug}">
@@ -57,7 +57,10 @@
 		font-size: 1.2rem;
 		width: max-content;
 		max-width: 100%;
-		/* padding: 2vh; */
+	}
+	.posts.updates {
+		width: 100%;
+		padding: 2vh;
 	}
 
 	.wrapper {
