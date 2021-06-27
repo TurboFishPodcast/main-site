@@ -31,5 +31,20 @@
 	<meta property="twitter:description" content={description} />
 	<meta property="twitter:image" content="https://respdev.com/banner.png?v=2" />
 
-	<script defer>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"Vandesm14`",utcoffset:"-4"}))};sessionStorage.setItem("_swa","1");</script>
+	<!-- Default Statcounter code for Responsive
+	https://respdev.com -->
+	<script type="text/javascript">
+	var sc_project=12557008; 
+	var sc_invisible=1; 
+	var sc_security="f17326f0"; 
+	</script>
+	<script type="text/javascript"
+	src="https://www.statcounter.com/counter/counter.js"
+	async></script>
+	<noscript><div class="statcounter"><a title="Web Analytics"
+	href="https://statcounter.com/" target="_blank"><img
+	class="statcounter"
+	src="https://c.statcounter.com/12557008/0/f17326f0/1/"
+	alt="Web Analytics"></a></div></noscript>
+	<!-- End of Statcounter Code -->
 </svelte:head>
