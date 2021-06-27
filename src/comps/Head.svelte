@@ -30,4 +30,6 @@
 	<meta property="twitter:title" content={title} />
 	<meta property="twitter:description" content={description} />
 	<meta property="twitter:image" content="https://respdev.com/banner.png?v=2" />
+
+	<script defer>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"Vandesm14`",utcoffset:"-4"}))};sessionStorage.setItem("_swa","1");</script>
 </svelte:head>
