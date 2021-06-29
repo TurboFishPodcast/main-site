@@ -12,7 +12,7 @@
 	let next = false;
 
 	(async () => {
-		const res = await fetch('https://respdev-blog.deno.dev/page/${page}');
+		const res = await fetch(`https://respdev-blog.deno.dev/page/${page}`);
 		const json = await res.json();
 		posts = json.posts.reverse();
 		next = json.next;
