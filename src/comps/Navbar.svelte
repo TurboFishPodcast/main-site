@@ -18,9 +18,9 @@
 	{/if}
 	<div class="buttons">
 		<Button click={()=>expand=false} inverted={mobile} href="/">Home</Button>
-		<Button click={()=>expand=false} inverted={mobile} href="/podcast">Podcast</Button>
-		<Button click={()=>expand=false} inverted={mobile} href="/events">Events</Button>
 		<Button click={()=>expand=false} inverted={mobile} href="/blog">Blog</Button>
+		<Button click={()=>expand=false} inverted={mobile} external={true} blank={true} href="https://anchor.fm/responsive">Podcast</Button>
+		<Button click={()=>expand=false} inverted={mobile} href="/events">Events</Button>
 		<Button click={()=>expand=false} inverted={mobile} href="/discord">Discord</Button>
 		<!-- <Button click={()=>expand=false} inverted={mobile} href="https://fridgesales.info" external={true} blank={true}>Fridge</Button> -->
 	</div>
