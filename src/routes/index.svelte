@@ -5,11 +5,18 @@
 	import Cards from '../comps/Cards.svelte';
 	import Posts from "../comps/Posts.svelte";
 
-	const posts = [{
-		description: 'Welcome to Responsive! This is the very first announcement (of many) that we will send through the site. See you around!',
-		date: '2021-06-21T17:00:00.000Z',
-		link: '/blog/first-post'
-	}];
+	const posts = [
+		{
+			description: 'Another website? Nah, just Leon messing around',
+			date: '2021-06-29T23:30:00.000Z',
+			link: '/blog/the-other-site'
+		},
+		{
+			description: 'Welcome to Responsive! This is the very first announcement (of many) that we will send through the site. See you around!',
+			date: '2021-06-21T17:00:00.000Z',
+			link: '/blog/first-post'
+		}
+	];
 
 	const cards = [
 		{
