@@ -10,7 +10,7 @@
 
 	(async () => {
 		const res = await fetch('https://respdev-blog.deno.dev/page/0');
-		posts = (await res.json()).posts;
+		posts = (await res.json()).posts.reverse();
 	})();
 </script>
 
