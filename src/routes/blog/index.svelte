@@ -39,16 +39,10 @@
 		}
 	}
 
-	div {
-		position: relative;
-	}
-
 	svg {
-		position: absolute;
 		animation: spin 1.7s cubic-bezier(.34,.27,.35,.67) infinite;
 		width: 4rem;
 		height: 4rem;
 		margin-left: 8.5ch;
-		/* margin-top: 1rem; */
 	}
 </style>
