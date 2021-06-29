@@ -10,6 +10,7 @@
 </script>
 
 <div class="posts {type}">
+	<slot></slot>
 	{#each posts as post}
 		{#if type === 'blog'}
 			<a class="wrapper" href="/blog/{post.slug}">
