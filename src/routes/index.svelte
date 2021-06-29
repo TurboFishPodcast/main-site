@@ -5,7 +5,7 @@
 	import Cards from '../comps/Cards.svelte';
 	import Posts from "../comps/Posts.svelte";
 
-	import files from './db/updates.json';
+	import posts from './db/updates.json';
 	let cards = [
 		{
 			title: 'Discord',
@@ -50,5 +50,5 @@
 </Article>
 <Cards {cards}/>
 <Article animate={false} title="Updates">
-	<Posts {files} type="updates" />
+	<Posts {posts} type="updates" />
 </Article>

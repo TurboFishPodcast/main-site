@@ -1,19 +1,19 @@
 <script context="module">
-	import db from '../db/posts.json';
-
 	export async function load({page, fetch}) {
 		const params = page.params;
-		const article = db.find(el => el.slug === params.slug);
+		const res = await fetch(`https://respdev-blog.deno.dev/post/${params.slug}`);
+		const data = await res.text();
 
-		if (article) {
+		if (data) {
 			return {
 				props: {
-					article,
-					content: await (await fetch(`/db/posts/${article.slug}.md`)).text()
+					data
 				}
 			};
 		}
 	}
+
+	export const prerender = false;
 </script>
 
 <script>
@@ -31,7 +31,10 @@
 	const writer = new cm.HtmlRenderer({softbreak: '<br>'});
 	const parse = text => writer.render(reader.parse(text));
 
-	export let article, content;
+	export let data;
+	const metadata = metaParser(data);
+	const article = metadata.metadata;
+	const content = metadata.content;
 </script>
 
 <Head	title="{article.title ?? article.slug} | Responsive Blog"	description={article.description ?? 'The Responsive Blog, who knew this existed?'} />
@@ -41,8 +44,12 @@
 	<Article animate={false}>
 		<a href="/blog">&lt;- Back</a><br>
 		<i>Posted: {dayjs(article.date).format('LLL')}</i><br>
-		<i>Written by: <a target="_blank" rel="external" href={article.link ?? 'https://twitter.com/RespDev'}>{article.author ?? 'Responsive'}</a></i>
-		{@html metaParser(content).content ? parse(metaParser(content).content) : 'Error: Article is missing content'}
+		<i>Written by:
+			{#each article.authors as author, i}
+				<a target="_blank" rel="external" href={author.link ?? 'https://twitter.com/RespDev'}>{author.name ?? 'Responsive'}</a>{i !== article.authors.length - 1 && article.authors.length > 1 ? ', ' : ''}
+			{/each}
+		</i>
+		{@html content ? parse(content) : 'Error: Article is missing content'}
 	</Article>
 </div>
 
