@@ -2,12 +2,12 @@
 	export async function load({page, fetch}) {
 		const params = page.params;
 		const res = await fetch(`https://respdev-blog.deno.dev/post/${params.slug}`);
-		const data = await res.text();
+		const data = await res.json();
 
 		if (data) {
 			return {
 				props: {
-					data
+					article: data
 				}
 			};
 		}
@@ -20,7 +20,6 @@
   import Head from "../../comps/Head.svelte";
   import Header from "../../comps/Header.svelte";
 	import Article from "../../comps/Article.svelte";
-	import metaParser from 'markdown-yaml-metadata-parser';
 
 	import dayjs from 'dayjs';
 	import localizedFormat from 'dayjs/plugin/localizedFormat.js';
@@ -31,10 +30,7 @@
 	const writer = new cm.HtmlRenderer({softbreak: '<br>'});
 	const parse = text => writer.render(reader.parse(text));
 
-	export let data;
-	const metadata = metaParser(data);
-	const article = metadata.metadata;
-	const content = metadata.content;
+	export let article;
 </script>
 
 <Head	title="{article.title ?? article.slug} | Responsive Blog"	description={article.description ?? 'The Responsive Blog, who knew this existed?'} />
@@ -49,7 +45,7 @@
 				<a target="_blank" rel="external" href={author.link ?? 'https://twitter.com/RespDev'}>{author.name ?? 'Responsive'}</a>{i !== article.authors.length - 1 && article.authors.length > 1 ? ', ' : ''}
 			{/each}
 		</i>
-		{@html content ? parse(content) : 'Error: Article is missing content'}
+		{@html article.content ? parse(article.content) : 'Error: Article is missing content'}
 	</Article>
 </div>
 

@@ -13,6 +13,7 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
+		// amp: true,
 		adapter: adapter({
 			pages: 'docs',
 			prerender: {

@@ -40,8 +40,6 @@
 	];
 </script>
 
-<link rel="stylesheet" href="/prism.css">
-
 <Head title="Responsive" description="I'm Responsive, a self-aware tech-related community run by a bird and a whatever the other guy desides to be. I come action-packed with events, a podcast, and a strange addiction to a blue birdsite." />
 
 <Header></Header>
