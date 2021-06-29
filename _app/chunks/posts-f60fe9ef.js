@@ -1,1 +1,0 @@
-var t=[{title:"Same Community, New Site",description:"The Responsive website? What? That exists?",date:"2021-06-20T17:10:00.000Z",author:"Shane",link:"https://twitter.com/vandesm14",path:"first-post.md",slug:"first-post"}];export{t as d};
