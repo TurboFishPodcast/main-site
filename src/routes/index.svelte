@@ -5,8 +5,13 @@
 	import Cards from '../comps/Cards.svelte';
 	import Posts from "../comps/Posts.svelte";
 
-	import posts from './db/updates.json';
-	let cards = [
+	const posts = [{
+		description: 'Welcome to Responsive! This is the very first announcement (of many) that we will send through the site. See you around!',
+		date: '2021-06-21T17:00:00.000Z',
+		link: '/blog/first-post'
+	}];
+
+	const cards = [
 		{
 			title: 'Discord',
 			description: 'Our server is the main hub of our community. We all are here if you need help and are always willing to give feedback! Feel free to pop in anytime and say hello!',
