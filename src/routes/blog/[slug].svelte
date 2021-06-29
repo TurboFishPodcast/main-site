@@ -39,7 +39,7 @@
 <div id="post">
 	<Article animate={false}>
 		<a href="/blog">&lt;- Back</a><br>
-		<i>Posted: {dayjs(article.date).format('LLL')}</i><br>
+		<i>Posted: {dayjs(article.date).format('LL')}</i><br>
 		<i>Written by:
 			{#each article.authors as author, i}
 				<a target="_blank" rel="external" href={author.link ?? 'https://twitter.com/RespDev'}>{author.name ?? 'Responsive'}</a>{i !== article.authors.length - 1 && article.authors.length > 1 ? ', ' : ''}

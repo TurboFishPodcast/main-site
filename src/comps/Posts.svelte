@@ -21,7 +21,7 @@
 								<a target="_blank" rel="external" href={author.link ?? 'https://twitter.com/RespDev'}>{author.name ?? 'Responsive'}</a>{i !== post.authors.length - 1 && post.authors.length > 1 ? ', ' : ''}
 							{/each}
 						</span>
-						<span>(<i title={dayjs(post.date).format('LLL') ?? 'Unknown Date'}>{dayjs(post.date).fromNow() ?? 'No Date'}</i>)</span>
+						<span>(<i title={dayjs(post.date).format('LL') ?? 'Unknown Date'}>{dayjs(post.date).fromNow() ?? 'No Date'}</i>)</span>
 					</p>
 					<p>"{post.description ?? ''}"</p>
 				</div>
