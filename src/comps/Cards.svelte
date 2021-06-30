@@ -65,7 +65,7 @@
 		padding: 1rem;
 		margin: 1rem 2vw;
 		text-align: center;
-		transition: 400ms ease-out;
+		transition: opacity 400ms ease-out, transform 400ms ease-out;
 		opacity: 0;
 		transform: translateX(-100px);
 	}
