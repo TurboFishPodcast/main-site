@@ -1,4 +1,5 @@
 <script>
+	import {fade} from 'svelte/transition';
 	import Button from './Button.svelte';
 	let scrollY = 0;
 	let innerWidth = 600;
@@ -24,6 +25,9 @@
 		<Button click={()=>expand=false} inverted={mobile} href="/discord">Discord</Button>
 		<!-- <Button click={()=>expand=false} inverted={mobile} href="https://fridgesales.info" external={true} blank={true}>Fridge</Button> -->
 	</div>
+	{#if mobile && expand}
+	<div class="shadow" transition:fade={{duration: 200}} on:click={()=>expand=false}></div>
+	{/if}
 </div>
 
 <style>
@@ -76,8 +80,16 @@
 		}
 		.navbar.expand {
 			background-color: var(--secondary-color);
-			box-shadow: 0 0 0 200vh #0006;
 			width: max-content;
+		}
+
+		.navbar .shadow {
+			position: fixed;
+			background-color: #0006;
+			top: -1rem;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
 		}
 
 		.navbar.background .navbar-background {
