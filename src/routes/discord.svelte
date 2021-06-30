@@ -18,6 +18,6 @@
 <Article>
 	<i>If this doesn't happen automatically just click the button below<br><br></i>
 	<center>
-		<Button icon="/social/discord.svg" href="https://discord.gg/UKQUkhjxRT">Redirect</Button>
+		<Button icon="/social/discord.svg" href="https://discord.gg/UKQUkhjxRT" external={true}>Redirect</Button>
 	</center>
 </Article>
