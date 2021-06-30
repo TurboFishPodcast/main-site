@@ -6,7 +6,7 @@
 	dayjs.extend(localizedFormat);
 
 	export let posts = [], type = 'blog';
-	posts = posts.filter(el => new Date() >= new Date(el.date)); // post date is less than or equal to current date
+	if (type !== 'events') posts = posts.filter(el => new Date() >= new Date(el.date)); // post date is less than or equal to current date
 </script>
 
 <div class="posts {type}">
@@ -27,7 +27,7 @@
 					<p>"{post.description ?? ''}"</p>
 				</div>
 			</a>
-		{:else if type === 'updates'}
+		{:else if type === 'updates' || type === 'events'}
 			<a class="wrapper" href="{post.link}">
 				<div class="post updates">
 					<h2 class="title">{post.title?? ''}</h2>
@@ -37,7 +37,15 @@
 						<p><b>{post.description ?? ''}</b></p>
 					{/if}
 					<p>
-						<i title={dayjs(post.date).format('LLL') ?? 'Unknown Date'}>{dayjs(post.date).fromNow() ?? 'No Date'}</i><br>
+						{#if type === 'updates'}
+							<i title={dayjs(post.date).format('LLL') ?? 'Unknown Date'}>{dayjs(post.date).fromNow() ?? 'No Date'}</i><br>
+						{:else if type === 'events'}
+							{#if post.endDate}
+								<i title={dayjs(post.endDate).format('LLL') ?? 'Unknown Date'}>Ends {dayjs(post.endDate).fromNow() ?? 'No Date'}</i><br>
+							{:else}
+								<i title={dayjs(post.date).format('LLL') ?? 'Unknown Date'}>Starts {dayjs(post.date).fromNow() ?? 'No Date'}</i><br>
+							{/if}
+						{/if}
 						{#if post.link}
 							<a href="{post.link}">Read More</a>
 						{/if}

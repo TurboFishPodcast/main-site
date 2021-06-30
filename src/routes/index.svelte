@@ -54,11 +54,11 @@
 
 <Head title="Responsive" description="I'm Responsive, a self-aware tech-related community run by a bird and a whatever the other guy desides to be. I come action-packed with events, a podcast, and a strange addiction to a blue birdsite." />
 
-<Header></Header>
+<Header />
 <Article title="Hi there!">
 	I'm Responsive, a self-aware tech-related community run by a bird and a whatever the other guy decides to be. I come action-packed with events, a podcast, and a strange addiction to a blue birdsite. I also enjoy tech pop-tarts, although only in moderation, of course. Here are some nicely animated cards to show you around:
 </Article>
 <Cards {cards}/>
-<Article animate={false} title="Updates">
+<Article title="Updates">
 	<Posts {posts} type="updates" />
 </Article>
