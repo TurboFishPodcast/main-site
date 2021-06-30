@@ -18,7 +18,7 @@
 	title="Responsive | Discord"
 	description="Responsive is more than just a Discord server, we're an action-packed tech-oriented community that always has something new in store! Join us for exciting new ideas and events!"
 />
-<meta http-equiv="refresh" content="2; url = https://discord.gg/UKQUkhjxRT" />
+<meta http-equiv="refresh" content="0; url = https://discord.gg/UKQUkhjxRT" />
 
 <Header>
 	Redirecting...
