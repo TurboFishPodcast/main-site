@@ -37,7 +37,7 @@
 
 <Header>{article.title ?? article.slug}</Header>
 <div id="post">
-	<Article animate={false}>
+	<Article>
 		<a href="/blog">&lt;- Back</a><br>
 		<i>Posted: {dayjs(article.date).format('LL')}</i><br>
 		<i>Written by:
@@ -46,6 +46,11 @@
 			{/each}
 		</i>
 		{@html article.content ? parse(article.content) : 'Error: Article is missing content'}
+	</Article>
+	<Article>
+		<center>
+			<a href="https://github.com/ResponsiveDev/blog" rel="external">Contribute</a>
+		</center>
 	</Article>
 </div>
 

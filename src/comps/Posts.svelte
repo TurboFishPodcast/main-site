@@ -1,4 +1,6 @@
 <script>
+	import Article from './Article.svelte';
+
 	import dayjs from 'dayjs';
 	import relativeTime from 'dayjs/plugin/relativeTime.js';
 	import localizedFormat from 'dayjs/plugin/localizedFormat.js';
@@ -54,6 +56,13 @@
 			</a>
 		{/if}
 	{/each}
+	{#if type === 'blog'}
+		<Article>
+			<center>
+				<a href="https://github.com/ResponsiveDev/blog" rel="external">Contribute</a>
+			</center>
+		</Article>
+	{/if}
 </div>
 
 <style>
