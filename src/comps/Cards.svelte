@@ -2,6 +2,8 @@
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import Button from './Button.svelte';
 
+	import {onMount} from 'svelte'
+
 	export let cards = [];
 
 	let first = true;
@@ -11,19 +13,26 @@
 	$: check = () => {
 		if (first && intersecting) {
 			first = false;
-			return 'xyz-in';
+			return true;
 		} else if (first && !intersecting) {
-			return 'hidden';
+			return false;
 		} else {
-			return 'xyz-in';
+			return true;
 		}
 	};
+
+	onMount(() => {
+		const cards = element.querySelectorAll('.card');
+		cards.forEach((el, i) => {
+			el.style.transitionDelay = `${i*300}ms`;
+		});
+  });
 </script>
 
 <IntersectionObserver {element} bind:intersecting threshold={0.3}>
-	<div class="cards" xyz="fade left-100 duration-6 stagger-3" bind:this={element}>
-		{#each cards as card}
-			<div class={'card ' + check()}>
+	<div class="cards" bind:this={element}>
+		{#each cards as card, i}
+			<div class={'card ' + (check() && 'show')}>
 				<a href={card.href}><h1>{card.title}</h1></a>
 				<p>{@html card.description}</p>
 				<div style="display: flex; flex: 1; margin-top: 1.3rem">
@@ -56,9 +65,13 @@
 		padding: 1rem;
 		margin: 1rem 2vw;
 		text-align: center;
-	}
-	.card.hidden {
+		transition: 400ms ease-out;
 		opacity: 0;
+		transform: translateX(-100px);
+	}
+	.card.show {
+		opacity: 1;
+		transform: translateX(0);
 	}
 	h1 {
 		margin-bottom: 1rem;
