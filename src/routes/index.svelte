@@ -7,6 +7,11 @@
 
 	const posts = [
 		{
+			description: 'Find out the best tips and tricks for your codebase in the 2nd episode of our Mini-Cast series!',
+			date: '2021-06-30T21:30:00.000Z',
+			link: 'https://anchor.fm/responsive/episodes/Responsive-Mini-Cast-2---Codebases-e13nqcc'
+		},
+		{
 			description: 'Another website? Nah, just Leon messing around',
 			date: '2021-06-29T23:30:00.000Z',
 			link: '/blog/the-other-site'

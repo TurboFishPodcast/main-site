@@ -3,15 +3,6 @@
 	import Header from '../comps/Header.svelte';
 	import Article from '../comps/Article.svelte';
 	import Button from '../comps/Button.svelte';
-
-	let header = {
-		title: 'Discord',
-		button: {
-			href: 'https://discord.gg/UKQUkhjxRT',
-			title: 'Redirect',
-			icon: '/social/discord.svg'
-		}
-	};
 </script>
 
 <Head
