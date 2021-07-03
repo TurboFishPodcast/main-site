@@ -16,9 +16,9 @@ const config = {
 		// amp: true,
 		adapter: adapter({
 			pages: 'docs',
-			prerender: {
-				enabled: true
-			}
+			// prerender: {
+			// 	enabled: true
+			// }
 		})
 	}
 };
