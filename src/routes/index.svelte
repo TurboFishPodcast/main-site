@@ -7,6 +7,16 @@
 
 	const posts = [
 		{
+			description: 'Let\'s get this party started! Check out our newest event!',
+			date: '2021-07-03T16:40:00.000Z',
+			link: '/blog/the-first-theme'
+		},
+		{
+			description: 'Yet another change, for the better!',
+			date: '2021-07-03T16:40:00.000Z',
+			link: '/blog/events-suck'
+		},
+		{
 			description: 'Find out the best tips and tricks for your codebase in the 2nd episode of our Mini-Cast series!',
 			date: '2021-06-30T21:30:00.000Z',
 			link: 'https://anchor.fm/responsive/episodes/Responsive-Mini-Cast-2---Codebases-e13nqcc'

@@ -6,11 +6,12 @@
 	import Posts from "../comps/Posts.svelte";
 
 	const posts = [
-		// {
-			// description: 'hello',
-			// date: '2021-06-30T00:00:00.000Z',
-			// endDate: '2021-07-24T00:00:00.000Z'
-		// }
+		{
+			description: 'Monthly Theme: File Systems',
+			date: '2021-07-02T00:00:00.000Z',
+			endDate: '2021-07-31T00:00:00.000Z',
+			link: '/blog/the-first-theme'
+		}
 	];
 </script>
 
