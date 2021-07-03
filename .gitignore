@@ -4,3 +4,4 @@ node_modules
 /package
 /docs
 /src/routes/db/*
+.vercel_build_output

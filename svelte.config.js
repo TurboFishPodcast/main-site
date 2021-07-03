@@ -1,10 +1,6 @@
 import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-static';
-
-// import dbuild_db from './build.db.js';
-
-// const dev = process.argv.slice(2)[0] === 'dev';
-// await dbuild_db(dev);
+// import adapter from '@sveltejs/adapter-static';
+import vercel from '@sveltejs/adapter-vercel';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,12 +10,10 @@ const config = {
 
 	kit: {
 		// amp: true,
-		adapter: adapter({
-			pages: 'docs',
-			// prerender: {
-			// 	enabled: true
-			// }
-		})
+		// adapter: adapter({
+		// 	pages: 'docs',
+		// })
+		adapter: vercel()
 	}
 };
 
