@@ -7,7 +7,7 @@
 	<meta name="author" content="Shane & Leon" />
 	<meta
 		name="keywords"
-		content="responsive, respdev, development, coding, community, discord, podcast"
+		content="responsive, respdev, development, coding, community, discord, podcast, blog, un-responsive, webdev, development"
 	/>
 	
 	<title>{title}</title>
