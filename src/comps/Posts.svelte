@@ -33,9 +33,10 @@
 			<a class="wrapper" href="{post.link}">
 				<div class="post updates">
 					<h2 class="title">{post.title?? ''}</h2>
-					{#if post.title}
+					{#if !post.title}
+					<!-- {#if post.title}
 						<p>{post.description ?? ''}</p>
-						{:else}
+						{:else} -->
 						<p><b>{post.description ?? ''}</b></p>
 					{/if}
 					<p>
