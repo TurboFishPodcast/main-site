@@ -4,15 +4,16 @@
 	import Article from "../comps/Article.svelte";
 	import Button from '../comps/Button.svelte';
 	import Posts from "../comps/Posts.svelte";
+	import Loader from "../comps/Loader.svelte";
 
-	const posts = [
-		{
-			description: 'Monthly Theme: File Systems',
-			date: '2021-07-02T00:00:00.000Z',
-			endDate: '2021-07-31T00:00:00.000Z',
-			link: '/blog/the-first-theme'
-		}
-	];
+	import { onMount } from 'svelte';
+
+	let posts = [];
+
+	onMount(async () => {
+		const res = await fetch('/events.json');
+		posts = await res.json();
+	});
 </script>
 
 <Head title="Responsive | Events" description="We host a variety of events such as hackathons, monthly themes, and open discussions! All events are open to any language or skillset!" />

@@ -4,34 +4,23 @@
 	import Article from '../comps/Article.svelte';
 	import Cards from '../comps/Cards.svelte';
 	import Posts from "../comps/Posts.svelte";
+	import Loader from "../comps/Loader.svelte";
 
-	const posts = [
-		{
-			description: 'Let\'s get this party started! Check out our newest event!',
-			date: '2021-07-03T16:40:00.000Z',
-			link: '/blog/the-first-theme'
-		},
-		{
-			description: 'Yet another change, for the better!',
-			date: '2021-07-03T16:40:00.000Z',
-			link: '/blog/events-suck'
-		},
-		{
-			description: 'Find out the best tips and tricks for your codebase in the 2nd episode of our Mini-Cast series!',
-			date: '2021-06-30T21:30:00.000Z',
-			link: 'https://anchor.fm/responsive/episodes/Responsive-Mini-Cast-2---Codebases-e13nqcc'
-		},
-		{
-			description: 'Another website? Nah, just Leon messing around',
-			date: '2021-06-29T23:30:00.000Z',
-			link: '/blog/the-other-site'
-		},
-		{
-			description: 'Welcome to Responsive! This is the very first announcement (of many) that we will send through the site. See you around!',
-			date: '2021-06-21T17:00:00.000Z',
-			link: '/blog/first-post'
-		}
-	];
+	import { onMount } from 'svelte';
+
+	let posts = [];
+
+	onMount(async () => {
+		const events = await fetch('/events.json');
+		const blog = await fetch(`https://respdev-blog.deno.dev/page/0`);
+
+		posts = [...posts, ...await events.json()];
+		posts = [...posts, ...(await blog.json()).posts.reverse().map(el => { return {...el, link: `/blog/${el.slug}`}})];
+
+		// @ts-expect-error
+		posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+		posts = posts.slice(0, 5);
+	});
 
 	const cards = [
 		{
@@ -44,13 +33,23 @@
 				inverted: true
 			}
 		},
+		// {
+		// 	title: 'Events',
+		// 	description: 'We host a variety of events such as hackathons, monthly themes, and open discussions! All events are open to any language or skillset!',
+		// 	href: '/events',
+		// 	button: {
+		// 		href: '/events',
+		// 		title: 'Join In',
+		// 		inverted: true
+		// 	}
+		// },
 		{
-			title: 'Events',
-			description: 'We host a variety of events such as hackathons, monthly themes, and open discussions! All events are open to any language or skillset!',
-			href: '/events',
+			title: 'Blog',
+			description: 'Some experts say that at the center of a community there\'s a singularity in which all important information exists, compressed into a single page. But what do they know?',
+			href: '/blog',
 			button: {
-				href: '/events',
-				title: 'Join In',
+				href: '/blog',
+				title: 'Read',
 				inverted: true
 			}
 		},
@@ -75,5 +74,6 @@
 </Article>
 <Cards {cards}/>
 <Article title="Updates">
+	<Loader bool={posts?.length === 0} />
 	<Posts {posts} type="updates" />
 </Article>
