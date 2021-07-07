@@ -8,25 +8,25 @@
 	dayjs.extend(localizedFormat);
 
 	export let posts = [], type = 'blog';
-	if (type !== 'events') posts = posts.filter(el => new Date() >= new Date(el.date)); // post date is less than or equal to current date
+	if (type !== 'events') posts = posts.filter(el => new Date() >= new Date(el.date_published)); // post date is less than or equal to current date
 </script>
 
 <div class="posts {type}">
 	<slot></slot>
 	{#each posts as post}
 		{#if type === 'blog'}
-			<a class="wrapper" href="/blog/{post.slug}">
+			<a class="wrapper" href="/blog/{post.id}">
 				<div class="post">
-					<h2 class="title">{post.title ?? post.slug}</h2>
+					<h2 class="title">{post.title ?? post.id}</h2>
 					<p>
 						<span>By
 							{#each post.authors as author, i}
-								<a target="_blank" rel="external" href={author.link ?? 'https://twitter.com/RespDev'}>{author.name ?? 'Responsive'}</a>{i !== post.authors.length - 1 && post.authors.length > 1 ? ', ' : ''}
+								<a target="_blank" rel="external" href={author.url ?? 'https://twitter.com/RespDev'}>{author.name ?? 'Responsive'}</a>{i !== post.authors.length - 1 && post.authors.length > 1 ? ', ' : ''}
 							{/each}
 						</span>
-						<span>(<i title={dayjs(post.date).format('LL') ?? 'Unknown Date'}>{dayjs(post.date).fromNow() ?? 'No Date'}</i>)</span>
+						<span>(<i title={dayjs(post.date_published).format('LL') ?? 'Unknown Date'}>{dayjs(post.date_published).fromNow() ?? 'No Date'}</i>)</span>
 					</p>
-					<p>"{post.description ?? ''}"</p>
+					<p>"{post.summary ?? ''}"</p>
 				</div>
 			</a>
 		{:else if type === 'updates' || type === 'events'}
@@ -35,18 +35,18 @@
 					<h2 class="title">{post.title?? ''}</h2>
 					{#if !post.title}
 					<!-- {#if post.title}
-						<p>{post.description ?? ''}</p>
+						<p>{post.summary ?? ''}</p>
 						{:else} -->
-						<p><b>{post.description ?? ''}</b></p>
+						<p><b>{post.summary ?? ''}</b></p>
 					{/if}
 					<p>
 						{#if type === 'updates'}
-							<i title={dayjs(post.date).format('LLL') ?? 'Unknown Date'}>{dayjs(post.date).fromNow() ?? 'No Date'}</i><br>
+							<i title={dayjs(post.date_published).format('LLL') ?? 'Unknown Date'}>{dayjs(post.date_published).fromNow() ?? 'No Date'}</i><br>
 						{:else if type === 'events'}
 							{#if post.endDate}
 								<i title={dayjs(post.endDate).format('LLL') ?? 'Unknown Date'}>Ends {dayjs(post.endDate).fromNow() ?? 'No Date'}</i><br>
 							{:else}
-								<i title={dayjs(post.date).format('LLL') ?? 'Unknown Date'}>Starts {dayjs(post.date).fromNow() ?? 'No Date'}</i><br>
+								<i title={dayjs(post.date_published).format('LLL') ?? 'Unknown Date'}>Starts {dayjs(post.date_published).fromNow() ?? 'No Date'}</i><br>
 							{/if}
 						{/if}
 						{#if post.link}

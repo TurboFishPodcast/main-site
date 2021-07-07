@@ -11,11 +11,16 @@
 	let posts = [];
 
 	onMount(async () => {
+		const blog = await fetch(`https://responsivedev.github.io/blog/dist/feed-0.json`);
 		const events = await fetch('/events.json');
-		const blog = await fetch(`https://respdev-blog.deno.dev/page/0`);
 
-		posts = [...posts, ...await events.json()];
-		posts = [...posts, ...(await blog.json()).posts.reverse().map(el => { return {...el, link: `/blog/${el.slug}`}})];
+		let evts = await events.json();
+		evts.forEach((el, i) => {
+			evts[i].date_published = evts[i].date;
+		});
+
+		posts = [...posts, ...evts];
+		posts = [...posts, ...(await blog.json()).items.map(el => { return {...el, link: `/blog/${el.id}`}})];
 
 		// @ts-expect-error
 		posts.sort((a, b) => new Date(b.date) - new Date(a.date));

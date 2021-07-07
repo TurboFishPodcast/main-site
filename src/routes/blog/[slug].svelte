@@ -33,19 +33,19 @@
 	export let article;
 </script>
 
-<Head	title="{article.title ?? article.slug} | Responsive Blog"	description={article.description ?? 'The Responsive Blog, who knew this existed?'} />
+<Head	title="{article.title ?? article.id} | Responsive Blog"	description={article.summary ?? 'The Responsive Blog, who knew this existed?'} />
 
-<Header>{article.title ?? article.slug}</Header>
+<Header>{article.title ?? article.id}</Header>
 <div id="post">
 	<Article>
 		<a href="/blog">&lt;- Back</a><br>
-		<i>Posted: {dayjs(article.date).format('LL')}</i><br>
+		<i>Posted: {dayjs(article.date_published).format('LL')}</i><br>
 		<i>Written by:
 			{#each article.authors as author, i}
-				<a target="_blank" rel="external" href={author.link ?? 'https://twitter.com/RespDev'}>{author.name ?? 'Responsive'}</a>{i !== article.authors.length - 1 && article.authors.length > 1 ? ', ' : ''}
+				<a target="_blank" rel="external" href={author.url ?? 'https://twitter.com/RespDev'}>{author.name ?? 'Responsive'}</a>{i !== article.authors.length - 1 && article.authors.length > 1 ? ', ' : ''}
 			{/each}
 		</i>
-		{@html article.content ? parse(article.content) : 'Error: Article is missing content'}
+		{@html article.content_html ? parse(article.content_html) : 'Error: Article is missing content'}
 	</Article>
 	<Article>
 		<center>

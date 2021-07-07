@@ -11,10 +11,10 @@
 	let next = false;
 
 	(async () => {
-		const res = await fetch(`https://respdev-blog.deno.dev/page/${page}`);
+		const res = await fetch(`https://responsivedev.github.io/blog/dist/feed-${page}.json`);
 		const json = await res.json();
-		posts = json.posts.reverse();
-		next = json.next;
+		posts = json.items;
+		next = json.next_url;
 	})();
 </script>
 
