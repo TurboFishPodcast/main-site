@@ -45,7 +45,7 @@
 				<a target="_blank" rel="external" href={author.url ?? 'https://twitter.com/RespDev'}>{author.name ?? 'Responsive'}</a>{i !== article.authors.length - 1 && article.authors.length > 1 ? ', ' : ''}
 			{/each}
 		</i>
-		{@html article.content_html ? parse(article.content_html) : 'Error: Article is missing content'}
+		{@html article.content_html ? parse(article._content_md) : 'Error: Article is missing content'}
 	</Article>
 	<Article>
 		<center>
