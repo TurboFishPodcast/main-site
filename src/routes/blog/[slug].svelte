@@ -1,7 +1,7 @@
 <script context="module">
 	export async function load({page, fetch}) {
 		const params = page.params;
-		const res = await fetch(`https://respdev-blog.deno.dev/post/${params.slug}`);
+		const res = await fetch(`https://responsivedev.github.io/blog/dist/${params.slug}.json`);
 		const data = await res.json();
 
 		if (data) {
