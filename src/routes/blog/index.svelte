@@ -6,16 +6,18 @@
 	import Posts from "../../comps/Posts.svelte";
 	import Loader from "../../comps/Loader.svelte";
 
+	import { onMount } from 'svelte';
+
 	let posts = [];
 	let page = 0;
 	let next = false;
 
-	(async () => {
+	onMount(async () => {
 		const res = await fetch(`https://responsivedev.github.io/blog/dist/feed-${page}.json`);
 		const json = await res.json();
 		posts = json.items;
 		next = json.next_url;
-	})();
+	});
 </script>
 
 <Head	title="Responsive | Blog"	description="The Responsive Blog, who knew this existed?" />
