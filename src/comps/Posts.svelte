@@ -43,10 +43,10 @@
 						{#if type === 'updates'}
 							<i title={dayjs(post.date_published).format('LLL') ?? 'Unknown Date'}>{dayjs(post.date_published).fromNow() ?? 'No Date'}</i><br>
 						{:else if type === 'events'}
-							{#if post.endDate}
-								<i title={dayjs(post.endDate).format('LLL') ?? 'Unknown Date'}>Ends {dayjs(post.endDate).fromNow() ?? 'No Date'}</i><br>
-							{:else}
+							{#if new Date(post.date_published) > new Date()}
 								<i title={dayjs(post.date_published).format('LLL') ?? 'Unknown Date'}>Starts {dayjs(post.date_published).fromNow() ?? 'No Date'}</i><br>
+							{:else}
+								<i title={dayjs(post.endDate).format('LLL') ?? 'Unknown Date'}>Ends {dayjs(post.endDate).fromNow() ?? 'No Date'}</i><br>
 							{/if}
 						{/if}
 						{#if post.link}
