@@ -1,3 +1,21 @@
+<script context="module">
+	export async function load({page, fetch}) {
+		const params = page.params;
+		const res = await fetch(`https://responsivedev.github.io/blog/dist/feed-${0}.json`);
+		const data = await res.json();
+
+		if (data) {
+			return {
+				props: {
+					posts: data.items
+				}
+			};
+		}
+	}
+
+	export const prerender = true;
+</script>
+
 <script>
   import Head from "../../comps/Head.svelte";
   import Header from "../../comps/Header.svelte";
@@ -8,16 +26,18 @@
 
 	import { onMount } from 'svelte';
 
-	let posts = [];
+	// let posts = [];
 	let page = 0;
 	let next = false;
 
-	onMount(async () => {
-		const res = await fetch(`https://responsivedev.github.io/blog/dist/feed-${page}.json`);
-		const json = await res.json();
-		posts = json.items;
-		next = json.next_url;
-	});
+	// onMount(async () => {
+	// 	const res = await fetch(`https://responsivedev.github.io/blog/dist/feed-${page}.json`);
+	// 	const json = await res.json();
+	// 	posts = json.items;
+	// 	next = json.next_url;
+	// });
+
+	export let posts;
 </script>
 
 <Head	title="Responsive | Blog"	description="The Responsive Blog, who knew this existed?" />

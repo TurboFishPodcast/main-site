@@ -1,7 +1,5 @@
 .DS_Store
 node_modules
 /.svelte-kit
-/package
-/docs
-/src/routes/db/*
+/dist
 .vercel_build_output
