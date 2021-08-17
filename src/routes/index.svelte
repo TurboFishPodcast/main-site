@@ -60,7 +60,7 @@
 		},
 		{
 			title: 'Podcast',
-			description: 'Want to listen to two guys talk about tech... and stuff? Whether you like tech updates or in-depth discussions, sit down and listen to an episode or two!',
+			description: 'Want to listen to three guys talk about tech... and stuff? Whether you like tech updates or in-depth discussions, sit down and listen to an episode or two!',
 			href: '/podcast',
 			button: {
 				href: '/podcast',

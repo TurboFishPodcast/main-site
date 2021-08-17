@@ -5,7 +5,7 @@
 	import Button from '../comps/Button.svelte';
 </script>
 
-<Head title="Responsive | Podcast" description="Two guys talk with the community about all things tech; from frameworks to tech pop-tarts, we've got you covered." />
+<Head title="Responsive | Podcast" description="Three guys talk with the community about all things tech; from frameworks to tech pop-tarts, we've got you covered." />
 <meta http-equiv="refresh" content="0; url = https://anchor.fm/responsive" />
 
 <Header>The Responsive Podcast</Header>
