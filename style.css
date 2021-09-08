@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+
+  background-color: #212121;
+  color: #f6f6f6;
+
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+header {
+  background: rgb(71,13,53);
+  background: linear-gradient(
+    22.5deg,
+    rgba(71,13,53,1) 0%,
+    rgba(160,18,51,1) 100%
+  );
+}
+
+header h1 { margin: 100px 0 0; }
+
+header > div, main, footer {
+  max-width: 640px;
+
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+footer { padding-top: 0; }
+
+header nav > *:not(:last-child) { margin-right: 0.5rem; }
+
+section:not(:last-child) { margin-bottom: 2rem; }
+
+#podcasts > li::marker { content: "- "; }
+
+#podcasts > li * {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+#podcasts > li p { margin-right: 1rem; }
+
+h1, h2, h3, h4 { line-height: 1.2; }
+
+a { color: #f6f6f6; }
