@@ -1,7 +1,7 @@
 "use strict";
 
 const RSS_URL = "https://anchor.fm/s/1d60e538/podcast/rss";
-const MAX_PODCASTS = 10;
+const MAX_PODCASTS = 5;
 
 fetch(RSS_URL)
   .then(res => res.text())
