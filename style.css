@@ -10,11 +10,11 @@ body {
 }
 
 header {
-  background: rgb(71,13,53);
+  background: #470d35;
   background: linear-gradient(
     22.5deg,
-    rgba(71,13,53,1) 0%,
-    rgba(160,18,51,1) 100%
+    #470d35 0%,
+    #a01233 100%
   );
 }
 
